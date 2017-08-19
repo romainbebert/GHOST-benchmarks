@@ -13,38 +13,61 @@ end
 file = File.open(ARGV[0])
 
 total = 0
-dps = 0
-max = 0
+wins = 0
+draws = 0
+live = 0
+live_e = 0
+hp = 0
+hp_e = 0
+me = false
 
-if ARGV[0].include? "zerg"
-  opti = "11400"
-elsif ARGV[0].include? "protoss"
-  opti = "4916.36"
-elsif ARGV[0].include? "terran"
-  opti = "6632.73"
-else
-  puts "Bad file name"
-  exit
-end
-  
-
-  
 # For each line in file
 file.each do |line|
-  words = line.split(' : ')
-  if words[0].include? "DPS"
-    if words[1].include? opti
-      max += 1
-    end
-    dps += words[1].to_i
+  if line.include? "#"
+    next
+  end
+
+  if line.include? "Draw"
+    draws += 1
     total += 1
+    next
+  end
+
+  words = line.split(': ')
+  if words[0].include? "Winner"
+    if words[1].include? "You"
+      wins += 1
+      me = true
+    else
+      me = false
+    end
+
+    total += 1
+  elsif words[0].include? "Diff"
+    if words[1].to_i > 0
+      live += words[1].to_i
+    elsif words[1].to_i < 0
+      live_e += words[1].to_i
+    end
+  elsif words[0].include? "HP"
+    if me
+      hp += words[1].to_f
+    else
+      hp_e += words[1].to_f      
+    end
   end
 end
 
-mean_dps = (dps.to_f / total).round(1)
-percent = (100 * max.to_f / total).round(1)
+mean_live = (live.to_f / wins).round(1)
+mean_hp = (hp / wins).round(1)
+mean_live_e = (-live_e.to_f / ( total - wins - draws ) ).round(1)
+mean_hp_e = (hp_e / ( total - wins - draws ) ).round(1)
+percent = (100 * wins.to_f / total).round(1)
 
-puts "#{ARGV[0]}:\n   #{percent}\% of perfects (#{max}/#{total})"
-puts "   Average dps = #{mean_dps}"
+puts "#{ARGV[0]}:\n   #{percent}\% of wins (#{wins}/#{total}, #{draws} draws)"
+puts "   Average number of GHOST living units = #{mean_live}"
+puts "   Average number of enemy living units = #{mean_live_e}"
+puts "   Average GHOST HP = #{mean_hp}"
+puts "   Average enemy HP = #{mean_hp_e}"
 
 exit
