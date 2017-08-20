@@ -6,7 +6,7 @@
 using namespace std;
 using namespace ghost;
 
-Stock::Stock( const vector< shared_ptr< Unit > > &variables, int quantity, ResourceType type )
+Stock::Stock( const vector< shared_ptr< Variable > >& variables, int quantity, ResourceType type )
   : Constraint	( variables ),
     _quantity	( quantity ),
     _type	( type )
@@ -20,23 +20,24 @@ double Stock::required_cost() const
   for( auto& v : variables )
     if( v->is_assigned() )
     {
+      Unit* u = dynamic_cast<Unit*>( v.get() );
       switch( _type )
       {
       case Mineral:
-	costValue = v->get_mineral();
+	costValue = u->get_mineral();
 	break;
       case Gas:
-	costValue = v->get_gas();
+	costValue = u->get_gas();
 	break;
       case Supply:
-	costValue = v->get_supply();
+	costValue = u->get_supply();
 	break;
       default:
 	throw 0;
       }
 
-      sum += v->get_value() * costValue;
+      sum += u->get_value() * costValue;
     }
-
+  
   return std::min( 0., sum - _quantity );
 }

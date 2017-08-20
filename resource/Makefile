@@ -19,7 +19,7 @@ endif
 
 
 # Linker flags
-LDFLAGS=-L$(LIBDIR) -pthread -l:libghost.so
+LDFLAGS=-L$(PWD)/$(LIBDIR) -pthread -l:libghost.so
 
 # Files
 SOURCES=$(foreach sdir, $(SRCDIR), $(wildcard $(sdir)/*.cpp))

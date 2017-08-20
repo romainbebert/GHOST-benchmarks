@@ -58,3 +58,41 @@ shared_ptr< Unit > make_unit( const UnitType& type )
     throw 0;
   }
 }
+
+vector< shared_ptr< Variable > > make_protoss()
+{
+  vector< shared_ptr< Variable > > units;
+  units.push_back( make_unit( UnitType::Zealot ) );
+  units.push_back( make_unit( UnitType::Dragoon ) );
+  units.push_back( make_unit( UnitType::DarkTemplar ) );
+  units.push_back( make_unit( UnitType::Reaver ) );
+  units.push_back( make_unit( UnitType::Scout ) );
+  return units;
+}
+
+vector< shared_ptr< Variable > > make_terran()
+{
+  vector< shared_ptr< Variable > > units;
+  units.push_back( make_unit( UnitType::Marine ) );
+  units.push_back( make_unit( UnitType::Firebat ) );
+  units.push_back( make_unit( UnitType::Ghost ) );
+  units.push_back( make_unit( UnitType::Vulture ) );
+  units.push_back( make_unit( UnitType::SiegeTankTankMode ) );
+  units.push_back( make_unit( UnitType::SiegeTankSiegeMode ) );
+  units.push_back( make_unit( UnitType::Goliath ) );
+  units.push_back( make_unit( UnitType::Wraith ) );
+  units.push_back( make_unit( UnitType::BattleCruiser ) );
+  return units;
+}
+
+vector< shared_ptr< Variable > > make_zerg()
+{
+  vector< shared_ptr< Variable > > units;
+  units.push_back( make_unit( UnitType::Zergling ) );
+  units.push_back( make_unit( UnitType::Hydralisk ) );
+  units.push_back( make_unit( UnitType::Lurker ) );
+  units.push_back( make_unit( UnitType::Ultralisk ) );
+  units.push_back( make_unit( UnitType::Mutalisk ) );
+  units.push_back( make_unit( UnitType::Guardian ) );
+  return units;
+}

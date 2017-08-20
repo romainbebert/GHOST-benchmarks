@@ -4,8 +4,9 @@
 #include <memory>
 
 #include <constraint.hpp>
+#include <variable.hpp>
 
-#include "unit.hpp"
+#include "var_unit.hpp"
 
 using namespace std;
 using namespace ghost;
@@ -20,5 +21,5 @@ class Stock : public Constraint
   double required_cost() const override;
 
 public:
-  StockMinerals( const vector< shared_ptr< Unit > > &variables, int quantity, ResourceType type );
+  Stock( const vector< shared_ptr< Variable > >& variables, int quantity, ResourceType type );
 };

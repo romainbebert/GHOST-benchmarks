@@ -2,8 +2,11 @@
 
 #include <memory>
 #include <string>
+#include <vector>
 
-#include "unit.hpp"
+#include <variable.hpp>
+
+#include "var_unit.hpp"
 
 using namespace std; 
 
@@ -29,3 +32,7 @@ enum UnitType{ Zealot,
 	       Guardian };
 
 shared_ptr< Unit > make_unit( const UnitType& type );
+
+vector< shared_ptr< Variable > > make_protoss();
+vector< shared_ptr< Variable > > make_terran();
+vector< shared_ptr< Variable > > make_zerg();
