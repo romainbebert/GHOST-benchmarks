@@ -9,8 +9,5 @@ class Stock : public Constraint
   double required_cost() const override;
 
 public:
-  Stock( const vector< shared_ptr< Variable > > &variables, int quantity )
-    : Constraint( variables ),
-      _quantity(quantity)
-  { }
-}
+  Stock( const vector< shared_ptr< Variable > > &variables, int quantity );
+};

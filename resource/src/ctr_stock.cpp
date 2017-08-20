@@ -1,10 +1,15 @@
 #include <algorithm>
 
-#include "stock.hpp"
+#include "ctr_stock.hpp"
 
 using namespace ghost;
 
-double Stock::required_cost() const override
+Stock::Stock( const vector< shared_ptr< Variable > > &variables, int quantity )
+  : Constraint( variables ),
+    _quantity(quantity)
+{ }
+
+double Stock::required_cost() const 
 {
   double sum = 0.;
 
