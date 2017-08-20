@@ -1,3 +1,5 @@
+#pragma once
+
 #include <string>
 #include <variable.hpp>
 
@@ -8,9 +10,19 @@ class Unit : public Variable
 {
   int		_mineral;
   int		_gas;
-  int		_supply;
+  double	_supply;
   double	_dps;
 
 public:
-  Unit( string name, string shortName, )
+  Unit( const string& name,
+	const string& shortName,
+	int m,
+	int g,
+	double s,
+	double dps);
+
+  inline int	get_mineral()	const { return _mineral; }
+  inline int	get_gas()	const { return _gas; }
+  inline double get_supply()	const { return _supply; }
+  inline int	get_dps()	const { return _dps; }
 };

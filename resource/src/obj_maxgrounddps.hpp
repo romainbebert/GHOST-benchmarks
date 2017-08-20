@@ -1,3 +1,5 @@
+#pragma once
+
 #include <string>
 #include <vector>
 #include <memory>
@@ -14,5 +16,5 @@ class MaxGroundDPS : public Objective
   double required_cost( const vector< shared_ptr< Unit > > &vecVariables ) const override;
   
 public:
-  MaxGroundDPS( const string& name );
+  MaxGroundDPS();
 }
