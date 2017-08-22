@@ -29,7 +29,7 @@ int main(int argc, char **argv)
   Solver solver( variables, constraints, objective );
 
   double cost = 0.;
-  vector<int> solution;
+  vector<int> solution( variables.size(), -1 );
   
   solver.solve( cost, solution, 30, 1000 );  
 }
