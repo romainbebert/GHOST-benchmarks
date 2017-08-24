@@ -36,8 +36,8 @@ double Stock::required_cost() const
 	throw 0;
       }
 
-      sum += u->get_value() * costValue;
+      sum += ( u->get_value() * costValue );
     }
   
-  return std::min( 0., sum - _quantity );
+  return std::max( 0., sum - _quantity );
 }

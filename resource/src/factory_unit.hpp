@@ -31,8 +31,8 @@ enum UnitType{ Zealot,
 	       Mutalisk,
 	       Guardian };
 
-shared_ptr< Unit > make_unit( const UnitType& type );
+shared_ptr< Unit > make_unit( const UnitType& type, int );
 
-vector< shared_ptr< Variable > > make_protoss();
-vector< shared_ptr< Variable > > make_terran();
-vector< shared_ptr< Variable > > make_zerg();
+vector< shared_ptr< Variable > > make_protoss( int );
+vector< shared_ptr< Variable > > make_terran( int );
+vector< shared_ptr< Variable > > make_zerg( int );

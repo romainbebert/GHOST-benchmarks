@@ -16,6 +16,7 @@ class Unit : public Variable
 public:
   Unit( const string& name,
 	const string& shortName,
+	int supplyAvailable,
 	int m,
 	int g,
 	double s,
