@@ -22,4 +22,6 @@ class Stock : public Constraint
 
 public:
   Stock( const vector< shared_ptr< Variable > >& variables, int quantity, ResourceType type );
+
+  inline int get_resource() { return _quantity; }
 };

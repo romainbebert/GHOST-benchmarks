@@ -46,4 +46,13 @@ int main(int argc, char **argv)
   }
   else
     cout << "No solutions found\n";
+
+  Stock* m = dynamic_cast<Stock*>( mineral.get() );
+  Stock* g = dynamic_cast<Stock*>( gas.get() );
+  Stock* s = dynamic_cast<Stock*>( supply.get() );
+
+  cout << "\nMinerals: " << m->get_resource() - m->cost()
+       << "\nGas: " << g->get_resource() - g->cost()
+       << "\nSupply: " << s->get_resource() - s->cost()
+       << "\n";
 }

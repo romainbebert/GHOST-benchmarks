@@ -214,7 +214,7 @@ namespace ghost
 
   private:
     double required_cost( const vector< shared_ptr< Variable > >& vecVariables ) const override { return 0.; }
-    
+
     shared_ptr< Variable > expert_heuristic_variable( const vector< shared_ptr< Variable > >& vecVariables ) const override
     {
       return vecVariables[ random.get_random_number( vecVariables.size() ) ];
@@ -224,7 +224,7 @@ namespace ghost
 				shared_ptr< Variable > var,
 				const vector< int >& valuesList ) const override
     {
-      return valuesList[ random.get_random_number( valuesList.size() ) ];      
+      return valuesList[ random.get_random_number( valuesList.size() ) ];
     }
 
     shared_ptr< Variable > expert_heuristic_value( const vector< shared_ptr< Variable > >& variablesList ) const override
