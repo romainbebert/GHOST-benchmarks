@@ -93,6 +93,19 @@ namespace ghost
     // map<Variable, vector< pair< shared_ptr< Constraint >, vector< Variable* >::iterator> >
     // _mapVarCtr;	//!< Map to know in which constraints are each variable.
 
+    //! Set the initial configuration by calling monte_carlo_sampling() 'samplings' times.
+    /*!
+     * After calling calling monte_carlo_sampling() 'samplings' times, the function keeps 
+     * the configuration wth the lowest global cost. If some of them reach 0, it keeps 
+     * the configuration with the best objective cost. 
+     * 
+     * \param samplings The number of Monte Carlo samplings. Equals to 1 by default.
+     */
+    void set_initial_configuration( int samplings = 1 );
+
+    //! Sample an configuration
+    void monte_carlo_sampling();
+    
     //! Decreasing values in tabuList
     //! \param freeVariables A boolean set to true if there is at least one free variable, ie, untabu.
     //! \sa _weakTabuList

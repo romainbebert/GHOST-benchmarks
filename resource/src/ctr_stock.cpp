@@ -38,6 +38,7 @@ double Stock::required_cost() const
 
       sum += ( u->get_value() * costValue );
     }
-  
+
+  debug_cost = ( sum - _quantity );
   return std::max( 0., sum - _quantity );
 }

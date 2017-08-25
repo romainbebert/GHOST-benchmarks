@@ -17,11 +17,13 @@ class Stock : public Constraint
 {
   int		_quantity;
   ResourceType	_type;
-  
+
   double required_cost() const override;
 
 public:
   Stock( const vector< shared_ptr< Variable > >& variables, int quantity, ResourceType type );
 
   inline int get_resource() { return _quantity; }
+
+  mutable double debug_cost;
 };

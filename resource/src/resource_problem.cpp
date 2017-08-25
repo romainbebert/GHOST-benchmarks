@@ -31,7 +31,7 @@ int main(int argc, char **argv)
   double cost = 0.;
   vector<int> solution( variables.size(), -1 );
   
-  bool found = solver.solve( cost, solution, 2, 130 );
+  bool found = solver.solve( cost, solution, 100, 1300 );
 
   if( found )
   {
@@ -40,9 +40,9 @@ int main(int argc, char **argv)
     for( auto& v : variables )
       cout << v->get_name() << ":" << v->get_value() << "\n";
     
-    // cout << "\nVia solution\n";
-    // for( auto& v : variables )
-    //   cout << v->get_name() << ":" << solution[ v->get_id() ] << "\n";
+    cout << "\nVia solution\n";
+    for( auto& v : variables )
+      cout << v->get_name() << ":" << solution[ v->get_id() ] << "\n";
   }
   else
     cout << "No solutions found\n";
@@ -51,8 +51,9 @@ int main(int argc, char **argv)
   Stock* g = dynamic_cast<Stock*>( gas.get() );
   Stock* s = dynamic_cast<Stock*>( supply.get() );
 
-  cout << "\nMinerals: " << m->get_resource() - m->cost()
-       << "\nGas: " << g->get_resource() - g->cost()
-       << "\nSupply: " << s->get_resource() - s->cost()
+  cout << "\nMinerals: " << -m->debug_cost
+       << "\nGas: " << -g->debug_cost
+       << "\nSupply: " << -s->debug_cost
        << "\n";
 }
+
