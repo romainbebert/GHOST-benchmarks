@@ -180,6 +180,8 @@ namespace ghost
      */
     inline void	set_value( int value ) { index = domain->index_of( value ); }
 
+    inline size_t get_domain_size() { return domain->get_size(); }
+    
     //! Function to know if the variable has been assigned to a value of its domain or not.
     /*! 
      * Returns true if the variable has been assigned to a value of its domain. 

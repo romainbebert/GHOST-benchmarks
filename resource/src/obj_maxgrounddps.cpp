@@ -31,26 +31,26 @@ double MaxGroundDPS::required_cost( const vector< shared_ptr< Variable > >& vecV
   // 			  } ); 
 }
 
-shared_ptr< Variable > MaxGroundDPS::expert_heuristic_variable( const vector< shared_ptr< Variable > >& vecVariables ) const
-{
-  vector< shared_ptr< Variable > > bestVars;
-  double currentDPS;
-  double bestDPS = 0.;
+// shared_ptr< Variable > MaxGroundDPS::expert_heuristic_variable( const vector< shared_ptr< Variable > >& vecVariables ) const
+// {
+//   vector< shared_ptr< Variable > > bestVars;
+//   double currentDPS;
+//   double bestDPS = 0.;
   
-  for( auto& v : vecVariables )
-  {
-    Unit* u = dynamic_cast<Unit*>( v.get() );
-    currentDPS = u->get_dps();
-    if( bestDPS < currentDPS )
-    {
-      bestDPS = currentDPS;
-      bestVars.clear();
-      bestVars.push_back( v );
-    }
-    else
-      if( bestDPS == currentDPS )
-	bestVars.push_back( v );
-  }
+//   for( auto& v : vecVariables )
+//   {
+//     Unit* u = dynamic_cast<Unit*>( v.get() );
+//     currentDPS = u->get_dps();
+//     if( bestDPS < currentDPS )
+//     {
+//       bestDPS = currentDPS;
+//       bestVars.clear();
+//       bestVars.push_back( v );
+//     }
+//     else
+//       if( bestDPS == currentDPS )
+// 	bestVars.push_back( v );
+//   }
   
-  return bestVars[ random.get_random_number( bestVars.size() ) ];      
-}
+//   return bestVars[ random.get_random_number( bestVars.size() ) ];      
+// }

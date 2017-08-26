@@ -1,3 +1,4 @@
+
 #include <vector>
 
 #include <solver.hpp>
@@ -31,7 +32,8 @@ int main(int argc, char **argv)
   double cost = 0.;
   vector<int> solution( variables.size(), -1 );
   
-  bool found = solver.solve( cost, solution, 100, 1300 );
+  // bool found = solver.solve( cost, solution, 20, 130 );
+  bool found = solver.solve( cost, solution, 100, 1500 );
 
   if( found )
   {
@@ -51,6 +53,11 @@ int main(int argc, char **argv)
   Stock* g = dynamic_cast<Stock*>( gas.get() );
   Stock* s = dynamic_cast<Stock*>( supply.get() );
 
+  // to update debug_cost
+  m->cost();
+  g->cost();
+  s->cost();
+  
   cout << "\nMinerals: " << -m->debug_cost
        << "\nGas: " << -g->debug_cost
        << "\nSupply: " << -s->debug_cost

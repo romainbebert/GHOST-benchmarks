@@ -81,8 +81,9 @@ namespace ghost
     shared_ptr< Objective >		_objective;	//!< The shared pointer of the objective function.
 
     vector<int>	_weakTabuList;		//!< The weak tabu list, frozing used variables for tabuTime iterations. 
-    Random	_randomVar;		//!< The random generator used by the solver.
+    Random	_random;		//!< The random generator used by the solver.
     double	_bestSatCost;		//!< The satisfaction cost of the best solution.
+    double	_bestSatCostTour;	//!< The satisfaction cost of the best solution in the current optimization loop.
     double	_bestOptCost;		//!< The optimization cost of the best solution.
     bool	_isOptimization;	//!< A boolean to know if it is a satisfaction or optimization run.
     bool	_permutationProblem;	//!< A boolean to know if it is a permutation problem or not.
@@ -92,70 +93,62 @@ namespace ghost
     mutable map< shared_ptr< Variable >, vector< shared_ptr< Constraint > > > _mapVarCtr;	//!< Map to know in which constraints are each variable.
     // map<Variable, vector< pair< shared_ptr< Constraint >, vector< Variable* >::iterator> >
     // _mapVarCtr;	//!< Map to know in which constraints are each variable.
-
-    //! Set the initial configuration by calling monte_carlo_sampling() 'samplings' times.
-    /*!
+ 
+    // Set the initial configuration by calling monte_carlo_sampling() 'samplings' times.
+    /*
      * After calling calling monte_carlo_sampling() 'samplings' times, the function keeps 
      * the configuration wth the lowest global cost. If some of them reach 0, it keeps 
      * the configuration with the best objective cost. 
-     * 
-     * \param samplings The number of Monte Carlo samplings. Equals to 1 by default.
      */
     void set_initial_configuration( int samplings = 1 );
 
-    //! Sample an configuration
+    // Sample an configuration
     void monte_carlo_sampling();
     
-    //! Decreasing values in tabuList
-    //! \param freeVariables A boolean set to true if there is at least one free variable, ie, untabu.
-    //! \sa _weakTabuList
-    void decay_weak_tabu_list( bool& freeVariables );
+    // // Compute and return the vector containing worst variables, ie, variables with the highest variable cost.
+    // vector< shared_ptr< Variable > > compute_worst_variables( bool freeVariables, const vector<double>& costVariables ) const;
 
-    //! Compute and return the vector containing worst variables,
-    //! ie, variables with the highest variable cost.
-    //! \return A vector of worst variables
-    vector< shared_ptr< Variable > > compute_worst_variables( bool freeVariables, const vector<double>& costVariables ) const;
-
-    //! Compute the cost of each constraints
-    //! \param costConstraints The vector to be filled by this function.
-    //! \return The sum of constraints costs, ie, the global cost of the current configuration.
+    // Compute the cost of each constraints
     double compute_constraints_costs( vector<double>& costConstraints ) const;
 
-    //! Compute the variable cost of each variables
-    //! \param costConstraints The vector containing the cost of each constraint.
-    //! \param costVariables The vector of the cost of each variable, filled by this function.
-    //! \param costNonTabuVariables The vector of the cost of non-tabu variables only, filled by this function.
+    // Compute the variable cost of each variables
     void compute_variables_costs( const vector<double>& costConstraints,
 				  vector<double>& costVariables,
-				  vector<double>& costNonTabuVariables ) const;
+				  vector<double>& costNonTabuVariables,
+				  const double currentSatCost  ) const;
 
-    // Compute incrementally the now global cost IF we change the value of 'variable' by 'value' with a local move.
-    double simulate_local_move_cost( shared_ptr< Variable > variable,
-				     double value,
-				     vector<double>& costConstraints,
-				     double currentSatCost ) const;
+    // Decreasing values in tabuList
+    void decay_weak_tabu_list( bool& freeVariables );
 
-    // Compute incrementally the now global cost IF we swap values of 'variable' with another variable.
-    double simulate_permutation_cost( shared_ptr< Variable > worstVariable,
-				      shared_ptr< Variable > otherVariable,
-				      vector<double>& costConstraints,
-				      double currentSatCost ) const;
+    // To factorize code like if (best > current) then best=current and update configuration
+    void update_better_configuration( double& best, const double current, vector<int>& configuration );
 
-    //! Function to make a local move, ie, to assign a given
-    //! value to a given variable
+    // Function to make a local move, ie, to assign a given value to a given variable
     void local_move( shared_ptr< Variable > variable,
 		     vector<double>& costConstraints,
 		     vector<double>& costVariables,
 		     vector<double>& costNonTabuVariables,
 		     double& currentSatCost );
 
-    //! Function to make a permutation move, ie, to assign a given
-    //! variable to a new position
+    // Function to make a permutation move, ie, to assign a given
+    // variable to a new position
     void permutation_move( shared_ptr< Variable > variable,
 			   vector<double>& costConstraints,
 			   vector<double>& costVariables,
 			   vector<double>& costNonTabuVariables,
 			   double& currentSatCost );
+
+    // Compute incrementally the now global cost IF we change the value of 'variable' by 'value' with a local move.
+    double simulate_local_move_cost( shared_ptr< Variable > variable,
+				     double value,
+				     const vector<double>& costConstraints,
+				     const double currentSatCost ) const;
+
+    // Compute incrementally the now global cost IF we swap values of 'variable' with another variable.
+    double simulate_permutation_cost( shared_ptr< Variable > worstVariable,
+				      shared_ptr< Variable > otherVariable,
+				      const vector<double>& costConstraints,
+				      const double currentSatCost ) const;
 
 
   public:
