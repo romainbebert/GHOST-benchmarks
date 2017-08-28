@@ -18,25 +18,24 @@ double Stock::required_cost() const
   int costValue;
 
   for( auto& v : *variables )
-    if( v.is_assigned() )
+  {
+    switch( _type )
     {
-      switch( _type )
-      {
-      case Mineral:
-	costValue = v.get_mineral();
-	break;
-      case Gas:
-	costValue = v.get_gas();
-	break;
-      case Supply:
-	costValue = v.get_supply();
-	break;
-      default:
-	throw 0;
-      }
-
-      sum += ( v.get_value() * costValue );
+    case Mineral:
+      costValue = v.get_mineral();
+      break;
+    case Gas:
+      costValue = v.get_gas();
+      break;
+    case Supply:
+      costValue = v.get_supply();
+      break;
+    default:
+      throw 0;
     }
+    
+    sum += ( v.get_value() * costValue );
+  }
 
   return std::max( 0., sum - _quantity );
 }
