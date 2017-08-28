@@ -9,16 +9,13 @@ MaxGroundDPS::MaxGroundDPS()
   : Objective( "Max Ground DPS" )
 { }
 
-double MaxGroundDPS::required_cost( const vector< shared_ptr< Variable > >& vecVariables ) const 
+double MaxGroundDPS::required_cost( vector< Unit > *vecVariables ) const 
 {
   double total = 0.;
   
-  for( auto& v : vecVariables )
-    if( v->is_assigned() )
-    {
-      Unit* u = dynamic_cast<Unit*>( v.get() );
-      total += u->get_value() * u->get_dps();
-    }
+  for( auto& v : *vecVariables )
+    if( v.is_assigned() )
+      total += v.get_value() * v.get_dps();
   
   return -total;
 
@@ -27,20 +24,19 @@ double MaxGroundDPS::required_cost( const vector< shared_ptr< Variable > >& vecV
   // 			  0,
   // 			  []( auto& v ){
   // 			    Unit* u = dynamic_cast<Unit*>( v.get() );
-  // 			    return u->is_assigned() ? u->get_value() * u->get_dps() : 0;
+  // 			    return v.is_assigned() ? v.get_value() * v.get_dps() : 0;
   // 			  } ); 
 }
 
-// shared_ptr< Variable > MaxGroundDPS::expert_heuristic_variable( const vector< shared_ptr< Variable > >& vecVariables ) const
+// Unit MaxGroundDPS::expert_heuristic_variable( const vector< Unit >& vecVariables ) const
 // {
-//   vector< shared_ptr< Variable > > bestVars;
+//   vector< Unit > bestVars;
 //   double currentDPS;
 //   double bestDPS = 0.;
   
 //   for( auto& v : vecVariables )
 //   {
-//     Unit* u = dynamic_cast<Unit*>( v.get() );
-//     currentDPS = u->get_dps();
+//     currentDPS = v.get_dps();
 //     if( bestDPS < currentDPS )
 //     {
 //       bestDPS = currentDPS;

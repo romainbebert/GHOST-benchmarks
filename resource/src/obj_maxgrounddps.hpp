@@ -2,20 +2,19 @@
 
 #include <string>
 #include <vector>
-#include <memory>
 
-#include <objective.hpp>
-#include <variable.hpp>
+#include <ghost/objective.hpp>
+#include <ghost/variable.hpp>
 
 #include "var_unit.hpp"
 
 using namespace std;
 using namespace ghost;
 
-class MaxGroundDPS : public Objective
+class MaxGroundDPS : public Objective<Unit>
 {
-  double required_cost( const vector< shared_ptr< Variable > >& vecVariables ) const override;
-  // shared_ptr< Variable > expert_heuristic_variable( const vector< shared_ptr< Variable > >& vecVariables ) const override;
+  double required_cost( vector< Unit > *vecVariables ) const override;
+  // Unit expert_heuristic_variable( const vector< Unit >& vecVariables ) const override;
 
 public:
   MaxGroundDPS();

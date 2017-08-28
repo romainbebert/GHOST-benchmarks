@@ -1,26 +1,29 @@
 # Directories
+
+#CXX=clang++
+CXX=g++
 EXEC=resource
 SRCDIR=src
-IDIR=include ../include
 OBJDIR=obj
 BINDIR=bin
-LIBDIR=../lib
+
 
 # Compiler flags
-IDIRFLAGS=$(foreach idir, $(IDIR), -I$(idir))
-CXXFIRSTFLAGS= -Ofast -DNDEBUG -W -Wall -Wextra -pedantic -Wno-sign-compare -Wno-unused-parameter $(IDIRFLAGS)
-CXXFIRSTFLAGSDEBUG= -g -O0 -W -Wall -Wextra -pedantic -Wno-sign-compare -Wno-unused-parameter $(IDIRFLAGS)
-
-# Compiler
-ifneq (,$(findstring g++,$(CXX)))
-	CXXFLAGS= -std=c++14 $(CXXFIRSTFLAGS)
-else
-	CXXFLAGS= -std=c++1y -stdlib=libc++ $(CXXFIRSTFLAGS)
-endif
-
+CXXFIRSTFLAGS= -Ofast -DNDEBUG -W -Wall -Wextra -pedantic -Wno-sign-compare -Wno-unused-parameter
+CXXFIRSTFLAGSDEBUG= -g -O0 -W -Wall -Wextra -pedantic -Wno-sign-compare -Wno-unused-parameter 
 
 # Linker flags
-LDFLAGS=-L$(PWD)/$(LIBDIR) -pthread -l:libghost.so
+LDFLAGS=-pthread -lghost
+
+# Compiler
+ifneq (,$(findstring clang,$(CXX)))
+	CXXFLAGS= -std=c++1y  -stdlib=libc++ $(CXXFIRSTFLAGS)
+	CXXFLAGSDEBUG= -std=c++1y  -stdlib=libc++ $(CXXFIRSTFLAGSDEBUG)
+	LDFLAGS=-pthread -lghost -lc++ -lc++abi
+else
+	CXXFLAGS= -std=c++14 $(CXXFIRSTFLAGS)
+	CXXFLAGSDEBUG= -std=c++14 $(CXXFIRSTFLAGSDEBUG)
+endif
 
 # Files
 SOURCES=$(foreach sdir, $(SRCDIR), $(wildcard $(sdir)/*.cpp))
@@ -28,7 +31,6 @@ OBJECTS=$(patsubst %.cpp, $(OBJDIR)/%.o, $(notdir $(SOURCES)))
 
 # For rm
 SOURCESTILDE=$(foreach sdir, $(SRCDIR), $(wildcard $(sdir)/*.cpp~))
-INCLUDESTILDE=$(foreach idir, $(IDIR), $(wildcard $(idir)/*.hpp~))
 
 vpath %.cpp $(SRCDIR)
 
@@ -40,7 +42,7 @@ vpath %.cpp $(SRCDIR)
 # Rules
 all: $(BINDIR)/$(EXEC)
 
-debug: CXXFLAGS= -std=c++14 $(CXXFIRSTFLAGSDEBUG)
+debug: CXXFLAGS= $(CXXFLAGSDEBUG)
 debug: $(BINDIR)/$(EXEC)
 
 $(BINDIR)/$(EXEC): $(OBJECTS)
@@ -52,4 +54,4 @@ $(OBJDIR)/%.o: %.cpp
 .PHONY: clean 
 
 clean:
-	rm -fr core *~ $(EXEC) $(OBJECTS) $(SOURCESTILDE) $(INCLUDESTILDE)
+	rm -fr core *~ $(EXEC) $(OBJECTS) $(SOURCESTILDE)

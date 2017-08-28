@@ -1,7 +1,7 @@
 #pragma once
 
 #include <string>
-#include <variable.hpp>
+#include <ghost/variable.hpp>
 
 using namespace std;
 using namespace ghost;

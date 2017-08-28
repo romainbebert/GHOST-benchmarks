@@ -1,10 +1,9 @@
 #pragma once
 
-#include <memory>
 #include <string>
 #include <vector>
 
-#include <variable.hpp>
+#include <ghost/variable.hpp>
 
 #include "var_unit.hpp"
 
@@ -31,8 +30,8 @@ enum UnitType{ Zealot,
 	       Mutalisk,
 	       Guardian };
 
-shared_ptr< Unit > make_unit( const UnitType& type, int );
+Unit make_unit( const UnitType& type, int );
 
-vector< shared_ptr< Variable > > make_protoss( int );
-vector< shared_ptr< Variable > > make_terran( int );
-vector< shared_ptr< Variable > > make_zerg( int );
+vector< Unit > make_protoss( int );
+vector< Unit > make_terran( int );
+vector< Unit > make_zerg( int );
