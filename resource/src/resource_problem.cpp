@@ -31,8 +31,8 @@ int main(int argc, char **argv)
   double cost = 0.;
   vector<int> solution( variables.size(), -1 );
   
-  // bool found = solver.solve( cost, solution, 20, 130 );
-  bool found = solver.solve( cost, solution, 100, 1500 );
+  bool found = solver.solve( cost, solution, 20, 130 );
+  // bool found = solver.solve( cost, solution, 100, 1500 );
 
   if( found )
   {
@@ -41,7 +41,7 @@ int main(int argc, char **argv)
     // for( auto& v : variables )
     //   cout << v.get_name() << ":" << v.get_value() << "\n";
     
-    cout << "\nVia solution\n";
+    cout << "Cost: " << cost << "\n*********\n";
     for( auto& v : variables )
       cout << v.get_name() << ":" << solution[ v.get_id() ] << "\n";
   }
