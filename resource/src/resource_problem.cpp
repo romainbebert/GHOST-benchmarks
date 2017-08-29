@@ -26,7 +26,7 @@ int main(int argc, char **argv)
   MaxGroundDPS objective;
 
   // Define solver
-  Solver<Unit, Stock, MaxGroundDPS> solver( &variables, &constraints, &objective );
+  Solver<Unit, Stock, MaxGroundDPS> solver( variables, constraints, objective );
 
   double cost = 0.;
   vector<int> solution( variables.size(), -1 );
