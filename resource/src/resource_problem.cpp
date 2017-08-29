@@ -23,10 +23,10 @@ int main(int argc, char **argv)
   vector< Stock > constraints { mineral, gas, supply };
 
   // Define objective
-  MaxGroundDPS objective;
+  shared_ptr<MaxGroundDPS> objective = make_shared<MaxGroundDPS>();
 
   // Define solver
-  Solver<Unit, Stock, MaxGroundDPS> solver( variables, constraints, objective );
+  Solver<Unit, Stock> solver( variables, constraints, objective );
 
   double cost = 0.;
   vector<int> solution( variables.size(), -1 );
@@ -36,10 +36,10 @@ int main(int argc, char **argv)
 
   if( found )
   {
-    // cout << "Cost: " << cost
-    // 	 << "\nVia Variables\n";
-    // for( auto& v : variables )
-    //   cout << v.get_name() << ":" << v.get_value() << "\n";
+    cout << "Cost: " << cost
+    	 << "\nVia Variables\n";
+    for( auto& v : variables )
+      cout << v.get_name() << ":" << v.get_value() << "\n";
     
     cout << "Cost: " << cost << "\n*********\n";
     for( auto& v : variables )
@@ -47,15 +47,5 @@ int main(int argc, char **argv)
   }
   else
     cout << "No solutions found\n";
-
-  // to update debug_cost
-  // mineral.cost();
-  // gas.cost();
-  // supply.cost();
-  
-  // cout << "\nMinerals: " << -mineral.debug_cost
-  //      << "\nGas: " << -gas.debug_cost
-  //      << "\nSupply: " << -supply.debug_cost
-  //      << "\n";
 }
 
