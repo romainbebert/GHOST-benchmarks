@@ -1,0 +1,206 @@
+#4  0x00007fe7fb11e346 in ghost::Domain::index_of (this=0x7fe7fb527680, value=154) at src/domain.cpp:78
+#5  0x0000000000407c50 in ghost::Variable::set_value (this=0x7fe7fb527630, value=154) at /usr/local/include/ghost/variable.hpp:146
+#6  0x00007fe7fb1200f2 in ghost::Variable::do_random_initialization (this=0x7fe7fb527630) at src/variable.cpp:81
+#7  0x000000000040e1c0 in ghost::Solver<Unit, Stock>::monte_carlo_sampling (this=0x7ffef72a5720) at /usr/local/include/ghost/solver.hpp:513
+#8  0x000000000040bfe4 in ghost::Solver<Unit, Stock>::set_initial_configuration (this=0x7ffef72a5720, samplings=100) at /usr/local/include/ghost/solver.hpp:487
+#9  0x000000000040a7c4 in ghost::Solver<Unit, Stock>::solve (this=0x7ffef72a5720, finalCost=@0x7ffef72a5718: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:293
+#4  0x00007fe7fb11e346 in ghost::Domain::index_of (this=0x7fe7fb51d800, value=178) at src/domain.cpp:78
+#5  0x0000000000407c50 in ghost::Variable::set_value (this=0x7fe7fb51d7b0, value=178) at /usr/local/include/ghost/variable.hpp:146
+#6  0x000000000040ebd3 in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffef72a5720, variable=0x7fe7fb51d7b0, value=178, costConstraints=..., currentSatCost=982) at /usr/local/include/ghost/solver.hpp:580
+#7  0x000000000040d189 in ghost::Solver<Unit, Stock>::local_move (this=0x7ffef72a5720, variable=0x7fe7fb51d7b0, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffef72a53f8: 982) at /usr/local/include/ghost/solver.hpp:634
+#8  0x000000000040aa76 in ghost::Solver<Unit, Stock>::solve (this=0x7ffef72a5720, finalCost=@0x7ffef72a5718: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#5  0x00007fe7fb11e346 in ghost::Domain::index_of (this=0x7fe7fb524ee0, value=64) at src/domain.cpp:78
+#6  0x0000000000407c50 in ghost::Variable::set_value (this=0x7fe7fb524e90, value=64) at /usr/local/include/ghost/variable.hpp:146
+#7  0x0000000000408561 in ghost::Objective<Unit>::expert_heuristic_value (this=0x225bd30, variables=0x7ffef72a7f50, var=0x7fe7fb524e90, possible_values=...) at /usr/local/include/ghost/objective.hpp:276
+#8  0x000000000040ecd6 in ghost::Objective<Unit>::heuristic_value (this=0x225bd30, variables=0x7ffef72a7f50, var=0x7fe7fb524e90, possible_values=...) at /usr/local/include/ghost/objective.hpp:108
+#9  0x000000000040d264 in ghost::Solver<Unit, Stock>::local_move (this=0x7ffef72a5720, variable=0x7fe7fb524e90, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffef72a53f8: 7750) at /usr/local/include/ghost/solver.hpp:653
+#10 0x000000000040aa76 in ghost::Solver<Unit, Stock>::solve (this=0x7ffef72a5720, finalCost=@0x7ffef72a5718: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#3  0x00007fe7fb11e346 in ghost::Domain::index_of (this=0x7fe7fb527680, value=355) at src/domain.cpp:78
+#4  0x0000000000407c50 in ghost::Variable::set_value (this=0x7fe7fb527630, value=355) at /usr/local/include/ghost/variable.hpp:146
+#5  0x000000000040ebd3 in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffef72a5720, variable=0x7fe7fb527630, value=355, costConstraints=..., currentSatCost=11108) at /usr/local/include/ghost/solver.hpp:580
+#6  0x000000000040d189 in ghost::Solver<Unit, Stock>::local_move (this=0x7ffef72a5720, variable=0x7fe7fb527630, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffef72a53f8: 11108) at /usr/local/include/ghost/solver.hpp:634
+#7  0x000000000040aa76 in ghost::Solver<Unit, Stock>::solve (this=0x7ffef72a5720, finalCost=@0x7ffef72a5718: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#5  0x00007f9a05063346 in ghost::Domain::index_of (this=0x7f9a05460060, value=374) at src/domain.cpp:78
+#6  0x0000000000407c50 in ghost::Variable::set_value (this=0x7f9a05460010, value=374) at /usr/local/include/ghost/variable.hpp:146
+#7  0x000000000040ebd3 in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffcca3586a0, variable=0x7f9a05460010, value=374, costConstraints=..., currentSatCost=89838) at /usr/local/include/ghost/solver.hpp:580
+#8  0x000000000040d189 in ghost::Solver<Unit, Stock>::local_move (this=0x7ffcca3586a0, variable=0x7f9a05460010, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffcca358378: 89838) at /usr/local/include/ghost/solver.hpp:634
+#9  0x000000000040aa76 in ghost::Solver<Unit, Stock>::solve (this=0x7ffcca3586a0, finalCost=@0x7ffcca358698: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#4  0x00007f9a05063346 in ghost::Domain::index_of (this=0x7f9a0546ee20, value=220) at src/domain.cpp:78
+#5  0x0000000000407c50 in ghost::Variable::set_value (this=0x7f9a0546edd0, value=220) at /usr/local/include/ghost/variable.hpp:146
+#6  0x000000000040ebd3 in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffcca3586a0, variable=0x7f9a0546edd0, value=220, costConstraints=..., currentSatCost=140640) at /usr/local/include/ghost/solver.hpp:580
+#7  0x000000000040d189 in ghost::Solver<Unit, Stock>::local_move (this=0x7ffcca3586a0, variable=0x7f9a0546edd0, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffcca358378: 140640) at /usr/local/include/ghost/solver.hpp:634
+#8  0x000000000040aa76 in ghost::Solver<Unit, Stock>::solve (this=0x7ffcca3586a0, finalCost=@0x7ffcca358698: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#3  0x00007f9a05063346 in ghost::Domain::index_of (this=0x7f9a05473d60, value=208) at src/domain.cpp:78
+#4  0x0000000000407c50 in ghost::Variable::set_value (this=0x7f9a05473d10, value=208) at /usr/local/include/ghost/variable.hpp:146
+#5  0x00007f9a050650f2 in ghost::Variable::do_random_initialization (this=0x7f9a05473d10) at src/variable.cpp:81
+#6  0x000000000040e1c0 in ghost::Solver<Unit, Stock>::monte_carlo_sampling (this=0x7ffcca3586a0) at /usr/local/include/ghost/solver.hpp:513
+#7  0x000000000040bfe4 in ghost::Solver<Unit, Stock>::set_initial_configuration (this=0x7ffcca3586a0, samplings=100) at /usr/local/include/ghost/solver.hpp:487
+#8  0x000000000040a7c4 in ghost::Solver<Unit, Stock>::solve (this=0x7ffcca3586a0, finalCost=@0x7ffcca358698: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:293
+#2  0x00007f9a05063356 in ghost::Domain::index_of (this=0x7f9a05462800, value=373) at src/domain.cpp:79
+#3  0x0000000000407c50 in ghost::Variable::set_value (this=0x7f9a054627b0, value=373) at /usr/local/include/ghost/variable.hpp:146
+#4  0x000000000040ebd3 in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffcca3586a0, variable=0x7f9a054627b0, value=373, costConstraints=..., currentSatCost=81944) at /usr/local/include/ghost/solver.hpp:580
+#5  0x000000000040d189 in ghost::Solver<Unit, Stock>::local_move (this=0x7ffcca3586a0, variable=0x7f9a054627b0, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffcca358378: 81944) at /usr/local/include/ghost/solver.hpp:634
+#6  0x000000000040aa76 in ghost::Solver<Unit, Stock>::solve (this=0x7ffcca3586a0, finalCost=@0x7ffcca358698: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+0x00007f34b0c7f2a2 in ghost::Domain::get_value (this=0x7f34b108ae20, index=374) at src/domain.cpp:70
+#0  0x00007f34b0c7f2a2 in ghost::Domain::get_value (this=0x7f34b108ae20, index=374) at src/domain.cpp:70
+#1  0x0000000000404522 in ghost::Variable::get_value (this=0x7f34b108add0) at /usr/local/include/ghost/variable.hpp:137
+#3  0x000000000040e1f1 in ghost::Constraint<Unit>::cost (this=0x229a960) at /usr/local/include/ghost/constraint.hpp:102
+#4  0x000000000040ec44 in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffce2997e60, variable=0x7f34b108add0, value=374, costConstraints=..., currentSatCost=54387) at /usr/local/include/ghost/solver.hpp:582
+#5  0x000000000040d189 in ghost::Solver<Unit, Stock>::local_move (this=0x7ffce2997e60, variable=0x7f34b108add0, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffce2997b38: 54387) at /usr/local/include/ghost/solver.hpp:634
+#6  0x000000000040aa76 in ghost::Solver<Unit, Stock>::solve (this=0x7ffce2997e60, finalCost=@0x7ffce2997e58: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#2  0x000000000040e1f1 in ghost::Constraint<Unit>::cost (this=0x22a0aa0) at /usr/local/include/ghost/constraint.hpp:102
+#3  0x000000000040ec44 in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffce2997e60, variable=0x7f34b108fd10, value=367, costConstraints=..., currentSatCost=84553) at /usr/local/include/ghost/solver.hpp:582
+#4  0x000000000040d189 in ghost::Solver<Unit, Stock>::local_move (this=0x7ffce2997e60, variable=0x7f34b108fd10, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffce2997b38: 84553) at /usr/local/include/ghost/solver.hpp:634
+#5  0x000000000040aa76 in ghost::Solver<Unit, Stock>::solve (this=0x7ffce2997e60, finalCost=@0x7ffce2997e58: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#1  0x00007f34b0c7f2c2 in ghost::Domain::get_value (this=0x7f34b1083740, index=0) at src/domain.cpp:71
+#2  0x0000000000404522 in ghost::Variable::get_value (this=0x7f34b10836f0) at /usr/local/include/ghost/variable.hpp:137
+#4  0x000000000040e1f1 in ghost::Constraint<Unit>::cost (this=0x22a0ac0) at /usr/local/include/ghost/constraint.hpp:102
+#5  0x000000000040ec44 in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffce2997e60, variable=0x7f34b108fd10, value=174, costConstraints=..., currentSatCost=25565) at /usr/local/include/ghost/solver.hpp:582
+#6  0x000000000040d189 in ghost::Solver<Unit, Stock>::local_move (this=0x7ffce2997e60, variable=0x7f34b108fd10, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffce2997b38: 25565) at /usr/local/include/ghost/solver.hpp:634
+#7  0x000000000040aa76 in ghost::Solver<Unit, Stock>::solve (this=0x7ffce2997e60, finalCost=@0x7ffce2997e58: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#4  0x00007f34b0c7f346 in ghost::Domain::index_of (this=0x7f34b107c060, value=277) at src/domain.cpp:78
+#5  0x0000000000407c50 in ghost::Variable::set_value (this=0x7f34b107c010, value=277) at /usr/local/include/ghost/variable.hpp:146
+#6  0x00007f34b0c810f2 in ghost::Variable::do_random_initialization (this=0x7f34b107c010) at src/variable.cpp:81
+#7  0x000000000040e1c0 in ghost::Solver<Unit, Stock>::monte_carlo_sampling (this=0x7ffce2997e60) at /usr/local/include/ghost/solver.hpp:513
+#8  0x000000000040bfe4 in ghost::Solver<Unit, Stock>::set_initial_configuration (this=0x7ffce2997e60, samplings=100) at /usr/local/include/ghost/solver.hpp:487
+#9  0x000000000040a7c4 in ghost::Solver<Unit, Stock>::solve (this=0x7ffce2997e60, finalCost=@0x7ffce2997e58: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:293
+#4  0x00007fa3942cd346 in ghost::Domain::index_of (this=0x7fa3946d1740, value=154) at src/domain.cpp:78
+#5  0x0000000000407c50 in ghost::Variable::set_value (this=0x7fa3946d16f0, value=154) at /usr/local/include/ghost/variable.hpp:146
+#6  0x00007fa3942cf0f2 in ghost::Variable::do_random_initialization (this=0x7fa3946d16f0) at src/variable.cpp:81
+#7  0x000000000040e1c0 in ghost::Solver<Unit, Stock>::monte_carlo_sampling (this=0x7ffe1806e2f0) at /usr/local/include/ghost/solver.hpp:513
+#8  0x000000000040bfe4 in ghost::Solver<Unit, Stock>::set_initial_configuration (this=0x7ffe1806e2f0, samplings=100) at /usr/local/include/ghost/solver.hpp:487
+#9  0x000000000040a7c4 in ghost::Solver<Unit, Stock>::solve (this=0x7ffe1806e2f0, finalCost=@0x7ffe1806e2e8: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:293
+#1  0x00007fa3942cd298 in ghost::Domain::get_value (this=0x7fa3946ca060, index=27) at src/domain.cpp:70
+#2  0x0000000000404522 in ghost::Variable::get_value (this=0x7fa3946ca010) at /usr/local/include/ghost/variable.hpp:137
+#4  0x000000000040e1f1 in ghost::Constraint<Unit>::cost (this=0x132a8a0) at /usr/local/include/ghost/constraint.hpp:102
+#5  0x000000000040ec44 in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffe1806e2f0, variable=0x7fa3946cc7b0, value=305, costConstraints=..., currentSatCost=58364) at /usr/local/include/ghost/solver.hpp:582
+#6  0x000000000040d189 in ghost::Solver<Unit, Stock>::local_move (this=0x7ffe1806e2f0, variable=0x7fa3946cc7b0, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffe1806dfc8: 58364) at /usr/local/include/ghost/solver.hpp:634
+#7  0x000000000040aa76 in ghost::Solver<Unit, Stock>::solve (this=0x7ffe1806e2f0, finalCost=@0x7ffe1806e2e8: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#4  0x00007fa3942cd346 in ghost::Domain::index_of (this=0x7fa3946d1740, value=233) at src/domain.cpp:78
+#5  0x0000000000407c50 in ghost::Variable::set_value (this=0x7fa3946d16f0, value=233) at /usr/local/include/ghost/variable.hpp:146
+#6  0x00007fa3942cf0f2 in ghost::Variable::do_random_initialization (this=0x7fa3946d16f0) at src/variable.cpp:81
+#7  0x000000000040e1c0 in ghost::Solver<Unit, Stock>::monte_carlo_sampling (this=0x7ffe1806e2f0) at /usr/local/include/ghost/solver.hpp:513
+#8  0x000000000040bfe4 in ghost::Solver<Unit, Stock>::set_initial_configuration (this=0x7ffe1806e2f0, samplings=100) at /usr/local/include/ghost/solver.hpp:487
+#9  0x000000000040a7c4 in ghost::Solver<Unit, Stock>::solve (this=0x7ffe1806e2f0, finalCost=@0x7ffe1806e2e8: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:293
+#4  0x00007fa3942cd346 in ghost::Domain::index_of (this=0x7fa3946d6680, value=163) at src/domain.cpp:78
+#5  0x0000000000407c50 in ghost::Variable::set_value (this=0x7fa3946d6630, value=163) at /usr/local/include/ghost/variable.hpp:146
+#6  0x000000000040ebd3 in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffe1806e2f0, variable=0x7fa3946d6630, value=163, costConstraints=..., currentSatCost=66321) at /usr/local/include/ghost/solver.hpp:580
+#7  0x000000000040d189 in ghost::Solver<Unit, Stock>::local_move (this=0x7ffe1806e2f0, variable=0x7fa3946d6630, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffe1806dfc8: 66321) at /usr/local/include/ghost/solver.hpp:634
+#8  0x000000000040aa76 in ghost::Solver<Unit, Stock>::solve (this=0x7ffe1806e2f0, finalCost=@0x7ffe1806e2e8: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#4  0x00007ff91a75d346 in ghost::Domain::index_of (this=0x7ff91ab5c800, value=330) at src/domain.cpp:78
+#5  0x0000000000407c50 in ghost::Variable::set_value (this=0x7ff91ab5c7b0, value=330) at /usr/local/include/ghost/variable.hpp:146
+#6  0x000000000040ebd3 in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffd5f0ff480, variable=0x7ff91ab5c7b0, value=330, costConstraints=..., currentSatCost=19666) at /usr/local/include/ghost/solver.hpp:580
+#7  0x000000000040d189 in ghost::Solver<Unit, Stock>::local_move (this=0x7ffd5f0ff480, variable=0x7ff91ab5c7b0, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffd5f0ff158: 19666) at /usr/local/include/ghost/solver.hpp:634
+#8  0x000000000040aa76 in ghost::Solver<Unit, Stock>::solve (this=0x7ffd5f0ff480, finalCost=@0x7ffd5f0ff478: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#4  0x00007ff91a75d346 in ghost::Domain::index_of (this=0x7ff91ab6dd60, value=280) at src/domain.cpp:78
+#5  0x0000000000407c50 in ghost::Variable::set_value (this=0x7ff91ab6dd10, value=280) at /usr/local/include/ghost/variable.hpp:146
+#6  0x00007ff91a75f0f2 in ghost::Variable::do_random_initialization (this=0x7ff91ab6dd10) at src/variable.cpp:81
+#7  0x000000000040e1c0 in ghost::Solver<Unit, Stock>::monte_carlo_sampling (this=0x7ffd5f0ff480) at /usr/local/include/ghost/solver.hpp:513
+#8  0x000000000040bfe4 in ghost::Solver<Unit, Stock>::set_initial_configuration (this=0x7ffd5f0ff480, samplings=100) at /usr/local/include/ghost/solver.hpp:487
+#9  0x000000000040a7c4 in ghost::Solver<Unit, Stock>::solve (this=0x7ffd5f0ff480, finalCost=@0x7ffd5f0ff478: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:293
+#1  0x000000000040ec24 in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffd5f0ff480, variable=0x7ff91ab5c7b0, value=325, costConstraints=..., currentSatCost=97424) at /usr/local/include/ghost/solver.hpp:581
+#2  0x000000000040d189 in ghost::Solver<Unit, Stock>::local_move (this=0x7ffd5f0ff480, variable=0x7ff91ab5c7b0, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffd5f0ff158: 97424) at /usr/local/include/ghost/solver.hpp:634
+#3  0x000000000040aa76 in ghost::Solver<Unit, Stock>::solve (this=0x7ffd5f0ff480, finalCost=@0x7ffd5f0ff478: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#1  0x000000000040e1f1 in ghost::Constraint<Unit>::cost (this=0xec6920) at /usr/local/include/ghost/constraint.hpp:102
+#2  0x000000000040ec44 in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffd5f0ff480, variable=0x7ff91ab68dd0, value=290, costConstraints=..., currentSatCost=6225) at /usr/local/include/ghost/solver.hpp:582
+#3  0x000000000040d189 in ghost::Solver<Unit, Stock>::local_move (this=0x7ffd5f0ff480, variable=0x7ff91ab68dd0, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffd5f0ff158: 6225) at /usr/local/include/ghost/solver.hpp:634
+#4  0x000000000040aa76 in ghost::Solver<Unit, Stock>::solve (this=0x7ffd5f0ff480, finalCost=@0x7ffd5f0ff478: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#4  0x00007fb8a2b7f346 in ghost::Domain::index_of (this=0x7fb8a2f8fd60, value=371) at src/domain.cpp:78
+#5  0x0000000000407c50 in ghost::Variable::set_value (this=0x7fb8a2f8fd10, value=371) at /usr/local/include/ghost/variable.hpp:146
+#6  0x000000000040ebd3 in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffd7bfe8d70, variable=0x7fb8a2f8fd10, value=371, costConstraints=..., currentSatCost=39573) at /usr/local/include/ghost/solver.hpp:580
+#7  0x000000000040d189 in ghost::Solver<Unit, Stock>::local_move (this=0x7ffd7bfe8d70, variable=0x7fb8a2f8fd10, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffd7bfe8a48: 39573) at /usr/local/include/ghost/solver.hpp:634
+#8  0x000000000040aa76 in ghost::Solver<Unit, Stock>::solve (this=0x7ffd7bfe8d70, finalCost=@0x7ffd7bfe8d68: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#1  0x000000000040e1f1 in ghost::Constraint<Unit>::cost (this=0x225fac0) at /usr/local/include/ghost/constraint.hpp:102
+#2  0x000000000040ec44 in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffd7bfe8d70, variable=0x7fb8a2f8fd10, value=211, costConstraints=..., currentSatCost=53507) at /usr/local/include/ghost/solver.hpp:582
+#3  0x000000000040d189 in ghost::Solver<Unit, Stock>::local_move (this=0x7ffd7bfe8d70, variable=0x7fb8a2f8fd10, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffd7bfe8a48: 53507) at /usr/local/include/ghost/solver.hpp:634
+#4  0x000000000040aa76 in ghost::Solver<Unit, Stock>::solve (this=0x7ffd7bfe8d70, finalCost=@0x7ffd7bfe8d68: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#4  0x00007fb8a2b7f346 in ghost::Domain::index_of (this=0x7fb8a2f85ee0, value=297) at src/domain.cpp:78
+#5  0x0000000000407c50 in ghost::Variable::set_value (this=0x7fb8a2f85e90, value=297) at /usr/local/include/ghost/variable.hpp:146
+#6  0x000000000040ebd3 in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffd7bfe8d70, variable=0x7fb8a2f85e90, value=297, costConstraints=..., currentSatCost=55490) at /usr/local/include/ghost/solver.hpp:580
+#7  0x000000000040d189 in ghost::Solver<Unit, Stock>::local_move (this=0x7ffd7bfe8d70, variable=0x7fb8a2f85e90, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffd7bfe8a48: 55490) at /usr/local/include/ghost/solver.hpp:634
+#8  0x000000000040aa76 in ghost::Solver<Unit, Stock>::solve (this=0x7ffd7bfe8d70, finalCost=@0x7ffd7bfe8d68: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#4  0x00007fb8a2b7f346 in ghost::Domain::index_of (this=0x7fb8a2f85ee0, value=125) at src/domain.cpp:78
+#5  0x0000000000407c50 in ghost::Variable::set_value (this=0x7fb8a2f85e90, value=125) at /usr/local/include/ghost/variable.hpp:146
+#6  0x000000000040ebd3 in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffd7bfe8d70, variable=0x7fb8a2f85e90, value=125, costConstraints=..., currentSatCost=9378) at /usr/local/include/ghost/solver.hpp:580
+#7  0x000000000040d189 in ghost::Solver<Unit, Stock>::local_move (this=0x7ffd7bfe8d70, variable=0x7fb8a2f85e90, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffd7bfe8a48: 9378) at /usr/local/include/ghost/solver.hpp:634
+#8  0x000000000040aa76 in ghost::Solver<Unit, Stock>::solve (this=0x7ffd7bfe8d70, finalCost=@0x7ffd7bfe8d68: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#4  0x00007faddf773346 in ghost::Domain::index_of (this=0x7faddfb77740, value=264) at src/domain.cpp:78
+#5  0x0000000000407c50 in ghost::Variable::set_value (this=0x7faddfb776f0, value=264) at /usr/local/include/ghost/variable.hpp:146
+#6  0x000000000040ebd3 in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffcfa269ec0, variable=0x7faddfb776f0, value=264, costConstraints=..., currentSatCost=104969) at /usr/local/include/ghost/solver.hpp:580
+#7  0x000000000040d189 in ghost::Solver<Unit, Stock>::local_move (this=0x7ffcfa269ec0, variable=0x7faddfb776f0, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffcfa269b98: 104969) at /usr/local/include/ghost/solver.hpp:634
+#8  0x000000000040aa76 in ghost::Solver<Unit, Stock>::solve (this=0x7ffcfa269ec0, finalCost=@0x7ffcfa269eb8: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#4  0x00007faddf773346 in ghost::Domain::index_of (this=0x7faddfb72800, value=229) at src/domain.cpp:78
+#5  0x0000000000407c50 in ghost::Variable::set_value (this=0x7faddfb727b0, value=229) at /usr/local/include/ghost/variable.hpp:146
+#6  0x00007faddf7750f2 in ghost::Variable::do_random_initialization (this=0x7faddfb727b0) at src/variable.cpp:81
+#7  0x000000000040e1c0 in ghost::Solver<Unit, Stock>::monte_carlo_sampling (this=0x7ffcfa269ec0) at /usr/local/include/ghost/solver.hpp:513
+#8  0x000000000040bfe4 in ghost::Solver<Unit, Stock>::set_initial_configuration (this=0x7ffcfa269ec0, samplings=100) at /usr/local/include/ghost/solver.hpp:487
+#9  0x000000000040a7c4 in ghost::Solver<Unit, Stock>::solve (this=0x7ffcfa269ec0, finalCost=@0x7ffcfa269eb8: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:293
+#4  0x00007faddf773346 in ghost::Domain::index_of (this=0x7faddfb70060, value=246) at src/domain.cpp:78
+#5  0x0000000000407c50 in ghost::Variable::set_value (this=0x7faddfb70010, value=246) at /usr/local/include/ghost/variable.hpp:146
+#6  0x000000000040ebd3 in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffcfa269ec0, variable=0x7faddfb70010, value=246, costConstraints=..., currentSatCost=15768) at /usr/local/include/ghost/solver.hpp:580
+#7  0x000000000040d189 in ghost::Solver<Unit, Stock>::local_move (this=0x7ffcfa269ec0, variable=0x7faddfb70010, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffcfa269b98: 15768) at /usr/local/include/ghost/solver.hpp:634
+#8  0x000000000040aa76 in ghost::Solver<Unit, Stock>::solve (this=0x7ffcfa269ec0, finalCost=@0x7ffcfa269eb8: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#4  0x00007faddf773346 in ghost::Domain::index_of (this=0x7faddfb74fa0, value=126) at src/domain.cpp:78
+#5  0x0000000000407c50 in ghost::Variable::set_value (this=0x7faddfb74f50, value=126) at /usr/local/include/ghost/variable.hpp:146
+#6  0x000000000040ebd3 in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffcfa269ec0, variable=0x7faddfb74f50, value=126, costConstraints=..., currentSatCost=354) at /usr/local/include/ghost/solver.hpp:580
+#7  0x000000000040d189 in ghost::Solver<Unit, Stock>::local_move (this=0x7ffcfa269ec0, variable=0x7faddfb74f50, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffcfa269b98: 354) at /usr/local/include/ghost/solver.hpp:634
+#8  0x000000000040aa76 in ghost::Solver<Unit, Stock>::solve (this=0x7ffcfa269ec0, finalCost=@0x7ffcfa269eb8: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#1  0x00007efdd816a298 in ghost::Domain::get_value (this=0x7efdd8575e20, index=0) at src/domain.cpp:70
+#2  0x0000000000404522 in ghost::Variable::get_value (this=0x7efdd8575dd0) at /usr/local/include/ghost/variable.hpp:137
+#4  0x000000000040e1f1 in ghost::Constraint<Unit>::cost (this=0x1cbcf30) at /usr/local/include/ghost/constraint.hpp:102
+#5  0x000000000040ec44 in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffe3a348410, variable=0x7efdd856e6f0, value=40, costConstraints=..., currentSatCost=129000) at /usr/local/include/ghost/solver.hpp:582
+#6  0x000000000040d189 in ghost::Solver<Unit, Stock>::local_move (this=0x7ffe3a348410, variable=0x7efdd856e6f0, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffe3a3480e8: 129000) at /usr/local/include/ghost/solver.hpp:634
+#7  0x000000000040aa76 in ghost::Solver<Unit, Stock>::solve (this=0x7ffe3a348410, finalCost=@0x7ffe3a348408: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#4  0x00007efdd816a346 in ghost::Domain::index_of (this=0x7efdd8575e20, value=176) at src/domain.cpp:78
+#5  0x0000000000407c50 in ghost::Variable::set_value (this=0x7efdd8575dd0, value=176) at /usr/local/include/ghost/variable.hpp:146
+#6  0x000000000040ebd3 in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffe3a348410, variable=0x7efdd8575dd0, value=176, costConstraints=..., currentSatCost=72123) at /usr/local/include/ghost/solver.hpp:580
+#7  0x000000000040d189 in ghost::Solver<Unit, Stock>::local_move (this=0x7ffe3a348410, variable=0x7efdd8575dd0, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffe3a3480e8: 72123) at /usr/local/include/ghost/solver.hpp:634
+#8  0x000000000040aa76 in ghost::Solver<Unit, Stock>::solve (this=0x7ffe3a348410, finalCost=@0x7ffe3a348408: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+0x00007efdd8169f80 in __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >::operator++()@plt () from /usr/local/lib/libghost.so
+#0  0x00007efdd8169f80 in __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >::operator++()@plt () from /usr/local/lib/libghost.so
+#4  0x00007efdd816a346 in ghost::Domain::index_of (this=0x7efdd8573680, value=363) at src/domain.cpp:78
+#5  0x0000000000407c50 in ghost::Variable::set_value (this=0x7efdd8573630, value=363) at /usr/local/include/ghost/variable.hpp:146
+#6  0x000000000040ebd3 in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffe3a348410, variable=0x7efdd8573630, value=363, costConstraints=..., currentSatCost=12354) at /usr/local/include/ghost/solver.hpp:580
+#7  0x000000000040d189 in ghost::Solver<Unit, Stock>::local_move (this=0x7ffe3a348410, variable=0x7efdd8573630, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffe3a3480e8: 12354) at /usr/local/include/ghost/solver.hpp:634
+#8  0x000000000040aa76 in ghost::Solver<Unit, Stock>::solve (this=0x7ffe3a348410, finalCost=@0x7ffe3a348408: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#3  0x000000000040e1f1 in ghost::Constraint<Unit>::cost (this=0x1cb88c0) at /usr/local/include/ghost/constraint.hpp:102
+#4  0x000000000040ec44 in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffe3a348410, variable=0x7efdd85697b0, value=96, costConstraints=..., currentSatCost=50432) at /usr/local/include/ghost/solver.hpp:582
+#5  0x000000000040d189 in ghost::Solver<Unit, Stock>::local_move (this=0x7ffe3a348410, variable=0x7efdd85697b0, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffe3a3480e8: 50432) at /usr/local/include/ghost/solver.hpp:634
+#6  0x000000000040aa76 in ghost::Solver<Unit, Stock>::solve (this=0x7ffe3a348410, finalCost=@0x7ffe3a348408: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#1  0x000000000040ec24 in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffda1ff8200, variable=0x7f6c3e9c87b0, value=196, costConstraints=..., currentSatCost=104807) at /usr/local/include/ghost/solver.hpp:581
+#2  0x000000000040d189 in ghost::Solver<Unit, Stock>::local_move (this=0x7ffda1ff8200, variable=0x7f6c3e9c87b0, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffda1ff7ed8: 104807) at /usr/local/include/ghost/solver.hpp:634
+#3  0x000000000040aa76 in ghost::Solver<Unit, Stock>::solve (this=0x7ffda1ff8200, finalCost=@0x7ffda1ff81f8: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+ghost::Domain::index_of (this=0x7f6c3e9cafa0, value=234) at src/domain.cpp:82
+#0  ghost::Domain::index_of (this=0x7f6c3e9cafa0, value=234) at src/domain.cpp:82
+#1  0x0000000000407c50 in ghost::Variable::set_value (this=0x7f6c3e9caf50, value=234) at /usr/local/include/ghost/variable.hpp:146
+#2  0x000000000040ebd3 in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffda1ff8200, variable=0x7f6c3e9caf50, value=234, costConstraints=..., currentSatCost=83853) at /usr/local/include/ghost/solver.hpp:580
+#3  0x000000000040d189 in ghost::Solver<Unit, Stock>::local_move (this=0x7ffda1ff8200, variable=0x7f6c3e9caf50, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffda1ff7ed8: 83853) at /usr/local/include/ghost/solver.hpp:634
+#4  0x000000000040aa76 in ghost::Solver<Unit, Stock>::solve (this=0x7ffda1ff8200, finalCost=@0x7ffda1ff81f8: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#4  0x00007f6c3e5cb346 in ghost::Domain::index_of (this=0x7f6c3e9cafa0, value=339) at src/domain.cpp:78
+#5  0x0000000000407c50 in ghost::Variable::set_value (this=0x7f6c3e9caf50, value=339) at /usr/local/include/ghost/variable.hpp:146
+#6  0x000000000040ebd3 in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffda1ff8200, variable=0x7f6c3e9caf50, value=339, costConstraints=..., currentSatCost=149230) at /usr/local/include/ghost/solver.hpp:580
+#7  0x000000000040d189 in ghost::Solver<Unit, Stock>::local_move (this=0x7ffda1ff8200, variable=0x7f6c3e9caf50, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffda1ff7ed8: 149230) at /usr/local/include/ghost/solver.hpp:634
+#8  0x000000000040aa76 in ghost::Solver<Unit, Stock>::solve (this=0x7ffda1ff8200, finalCost=@0x7ffda1ff81f8: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#4  0x00007f6c3e5cb346 in ghost::Domain::index_of (this=0x7f6c3e9d4e20, value=252) at src/domain.cpp:78
+#5  0x0000000000407c50 in ghost::Variable::set_value (this=0x7f6c3e9d4dd0, value=252) at /usr/local/include/ghost/variable.hpp:146
+#6  0x000000000040ebd3 in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffda1ff8200, variable=0x7f6c3e9d4dd0, value=252, costConstraints=..., currentSatCost=45757) at /usr/local/include/ghost/solver.hpp:580
+#7  0x000000000040d189 in ghost::Solver<Unit, Stock>::local_move (this=0x7ffda1ff8200, variable=0x7f6c3e9d4dd0, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffda1ff7ed8: 45757) at /usr/local/include/ghost/solver.hpp:634
+#8  0x000000000040aa76 in ghost::Solver<Unit, Stock>::solve (this=0x7ffda1ff8200, finalCost=@0x7ffda1ff81f8: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#3  0x00007fcd9b0fb346 in ghost::Domain::index_of (this=0x7fcd9b506e20, value=176) at src/domain.cpp:78
+#4  0x0000000000407c50 in ghost::Variable::set_value (this=0x7fcd9b506dd0, value=176) at /usr/local/include/ghost/variable.hpp:146
+#5  0x000000000040ebd3 in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffc6dca7d70, variable=0x7fcd9b506dd0, value=176, costConstraints=..., currentSatCost=10313) at /usr/local/include/ghost/solver.hpp:580
+#6  0x000000000040d189 in ghost::Solver<Unit, Stock>::local_move (this=0x7ffc6dca7d70, variable=0x7fcd9b506dd0, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffc6dca7a48: 10313) at /usr/local/include/ghost/solver.hpp:634
+#7  0x000000000040aa76 in ghost::Solver<Unit, Stock>::solve (this=0x7ffc6dca7d70, finalCost=@0x7ffc6dca7d68: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#3  0x00007fcd9b0fb346 in ghost::Domain::index_of (this=0x7fcd9b501ee0, value=201) at src/domain.cpp:78
+#4  0x0000000000407c50 in ghost::Variable::set_value (this=0x7fcd9b501e90, value=201) at /usr/local/include/ghost/variable.hpp:146
+#5  0x000000000040ebd3 in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffc6dca7d70, variable=0x7fcd9b501e90, value=201, costConstraints=..., currentSatCost=22068) at /usr/local/include/ghost/solver.hpp:580
+#6  0x000000000040d189 in ghost::Solver<Unit, Stock>::local_move (this=0x7ffc6dca7d70, variable=0x7fcd9b501e90, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffc6dca7a48: 22068) at /usr/local/include/ghost/solver.hpp:634
+#7  0x000000000040aa76 in ghost::Solver<Unit, Stock>::solve (this=0x7ffc6dca7d70, finalCost=@0x7ffc6dca7d68: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#1  0x000000000040c62d in ghost::Solver<Unit, Stock>::compute_variables_costs (this=0x7ffc6dca7d70, costConstraints=..., costVariables=..., costNonTabuVariables=...) at /usr/local/include/ghost/solver.hpp:461
+#2  0x000000000040d38a in ghost::Solver<Unit, Stock>::local_move (this=0x7ffc6dca7d70, variable=0x7fcd9b504630, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffc6dca7a48: 8575) at /usr/local/include/ghost/solver.hpp:662
+#3  0x000000000040aa76 in ghost::Solver<Unit, Stock>::solve (this=0x7ffc6dca7d70, finalCost=@0x7ffc6dca7d68: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#4  0x00007fcd9b0fb346 in ghost::Domain::index_of (this=0x7fcd9b50bd60, value=310) at src/domain.cpp:78
+#5  0x0000000000407c50 in ghost::Variable::set_value (this=0x7fcd9b50bd10, value=310) at /usr/local/include/ghost/variable.hpp:146
+#6  0x000000000040ebd3 in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffc6dca7d70, variable=0x7fcd9b50bd10, value=310, costConstraints=..., currentSatCost=18856) at /usr/local/include/ghost/solver.hpp:580
+#7  0x000000000040d189 in ghost::Solver<Unit, Stock>::local_move (this=0x7ffc6dca7d70, variable=0x7fcd9b50bd10, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffc6dca7a48: 18856) at /usr/local/include/ghost/solver.hpp:634
+#8  0x000000000040aa76 in ghost::Solver<Unit, Stock>::solve (this=0x7ffc6dca7d70, finalCost=@0x7ffc6dca7d68: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329

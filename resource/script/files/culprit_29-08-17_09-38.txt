@@ -1,0 +1,16 @@
+Constraint<Unit>::cost: 6
+Solver<Unit, Stock>::simulate_local_move_cost: 31
+Solver<Unit, Stock>::local_move: 30
+Solver<Unit, Stock>::solve: 40
+Domain::index_of: 20
+Variable::set_value: 20
+Solver<Unit, Stock>::compute_variables_costs: 22
+Domain::get_size: 1
+Variable::possible_values: 11
+Domain::get_value: 6
+Variable::get_value: 5
+Solver<Unit, Stock>::VarComp, std::allocator<std::pair<Unit const, std::vector<Stock, std::allocator<Stock> > > > >::end: 2
+Solver<Unit, Stock>::VarComp, std::allocator<std::pair<Unit const, std::vector<Stock, std::allocator<Stock> > > > >::operator[]: 3
+Solver<Unit, Stock>::VarComp, std::allocator<std::pair<Unit const, std::vector<Stock, std::allocator<Stock> > > > >::_M_lower_bound: 3
+Solver<Unit, Stock>::VarComp, std::allocator<std::pair<Unit const, std::vector<Stock, std::allocator<Stock> > > > >::lower_bound: 4
+Solver<Unit, Stock>::VarComp, std::allocator<std::pair<Unit const, std::vector<Stock, std::allocator<Stock> > > > >::_S_right: 2

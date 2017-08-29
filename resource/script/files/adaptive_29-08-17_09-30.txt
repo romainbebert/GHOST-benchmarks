@@ -1,0 +1,14 @@
+Domain::index_of: 30
+Variable::set_value: 29
+Variable::do_random_initialization: 7
+Solver<Unit, Stock>::monte_carlo_sampling: 7
+Solver<Unit, Stock>::set_initial_configuration: 7
+Solver<Unit, Stock>::solve: 40
+Solver<Unit, Stock>::simulate_local_move_cost: 31
+Solver<Unit, Stock>::local_move: 33
+Objective<Unit>::expert_heuristic_value: 1
+Objective<Unit>::heuristic_value: 1
+Domain::get_value: 5
+Variable::get_value: 4
+Constraint<Unit>::cost: 8
+Solver<Unit, Stock>::compute_variables_costs: 1

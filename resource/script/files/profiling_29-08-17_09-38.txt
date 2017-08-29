@@ -1,0 +1,1079 @@
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x00000000004047a3 in __gnu_cxx::__normal_iterator<Unit*, std::vector<Unit, std::allocator<Unit> > >::__normal_iterator (this=0x7ffc50e9c820, __i=@0x7ffc50ea1d70: 0x7fdcb30a6010) at /usr/local/include/c++/5.2.0/bits/stl_iterator.h:741
+741	      : _M_current(__i) { }
+To enable execution of this file add
+	add-auto-load-safe-path /usr/local/lib64/libstdc++.so.6.0.21-gdb.py
+line to your configuration file "/home/flo/.gdbinit".
+To completely disable this security protection add
+	set auto-load safe-path /
+line to your configuration file "/home/flo/.gdbinit".
+For more information about this security protection see the
+"Auto-loading safe path" section in the GDB manual.  E.g., run from the shell:
+	info "(gdb)Auto-loading safe path"
+#0  0x00000000004047a3 in __gnu_cxx::__normal_iterator<Unit*, std::vector<Unit, std::allocator<Unit> > >::__normal_iterator (this=0x7ffc50e9c820, __i=@0x7ffc50ea1d70: 0x7fdcb30a6010) at /usr/local/include/c++/5.2.0/bits/stl_iterator.h:741
+#1  0x00000000004046ed in std::vector<Unit, std::allocator<Unit> >::begin (this=0x7ffc50ea1d70) at /usr/local/include/c++/5.2.0/bits/stl_vector.h:548
+#2  0x000000000040441f in Stock::required_cost (this=0xe95fc0) at src/ctr_stock.cpp:20
+#3  0x000000000040e2b5 in ghost::Constraint<Unit>::cost (this=0xe95fc0) at /usr/local/include/ghost/constraint.hpp:102
+#4  0x000000000040e86e in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffc50e9f540, variable=0x7fdcb30afe90, value=236, costConstraints=..., currentSatCost=82915) at /usr/local/include/ghost/solver.hpp:586
+#5  0x000000000040d2e3 in ghost::Solver<Unit, Stock>::local_move (this=0x7ffc50e9f540, variable=0x7fdcb30afe90, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffc50e9cb28: 82915) at /usr/local/include/ghost/solver.hpp:638
+#6  0x000000000040ac40 in ghost::Solver<Unit, Stock>::solve (this=0x7ffc50e9f540, finalCost=@0x7ffc50e9f538: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#7  0x000000000040950a in main (argc=1, argv=0x7ffc50ea1f98) at src/resource_problem.cpp:34
+A debugging session is active.
+
+	Inferior 1 [process 4475] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x00000000004087a0 in __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >::operator++ (this=0x7ffc50e9c780) at /usr/local/include/c++/5.2.0/bits/stl_iterator.h:763
+763		++_M_current;
+To enable execution of this file add
+	add-auto-load-safe-path /usr/local/lib64/libstdc++.so.6.0.21-gdb.py
+line to your configuration file "/home/flo/.gdbinit".
+To completely disable this security protection add
+	set auto-load safe-path /
+line to your configuration file "/home/flo/.gdbinit".
+For more information about this security protection see the
+"Auto-loading safe path" section in the GDB manual.  E.g., run from the shell:
+	info "(gdb)Auto-loading safe path"
+#0  0x00000000004087a0 in __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >::operator++ (this=0x7ffc50e9c780) at /usr/local/include/c++/5.2.0/bits/stl_iterator.h:763
+#1  0x00007fdcb2caa57a in std::__find_if<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__ops::_Iter_equals_val<int const> > (__first=..., __last=..., __pred=...) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:126
+#2  0x00007fdcb2caa1d2 in std::__find_if<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__ops::_Iter_equals_val<int const> > (__first=..., __last=..., __pred=...) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:162
+#3  0x00007fdcb2ca9ccd in std::find<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int> (__first=..., __last=..., __val=@0x7ffc50e9c854: 358) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:3791
+#4  0x00007fdcb2ca9346 in ghost::Domain::index_of (this=0x7fdcb30b9d60, value=358) at src/domain.cpp:78
+#5  0x0000000000407cf0 in ghost::Variable::set_value (this=0x7fdcb30b9d10, value=358) at /usr/local/include/ghost/variable.hpp:146
+#6  0x000000000040e7fd in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffc50e9f540, variable=0x7fdcb30b9d10, value=358, costConstraints=..., currentSatCost=9630) at /usr/local/include/ghost/solver.hpp:584
+#7  0x000000000040d2e3 in ghost::Solver<Unit, Stock>::local_move (this=0x7ffc50e9f540, variable=0x7fdcb30b9d10, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffc50e9cb28: 9630) at /usr/local/include/ghost/solver.hpp:638
+#8  0x000000000040ac40 in ghost::Solver<Unit, Stock>::solve (this=0x7ffc50e9f540, finalCost=@0x7ffc50e9f538: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#9  0x000000000040950a in main (argc=1, argv=0x7ffc50ea1f98) at src/resource_problem.cpp:34
+A debugging session is active.
+
+	Inferior 1 [process 4475] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+std::__find_if<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__ops::_Iter_equals_val<int const> > (__first=..., __last=..., __pred=...) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:122
+122		  ++__first;
+To enable execution of this file add
+	add-auto-load-safe-path /usr/local/lib64/libstdc++.so.6.0.21-gdb.py
+line to your configuration file "/home/flo/.gdbinit".
+To completely disable this security protection add
+	set auto-load safe-path /
+line to your configuration file "/home/flo/.gdbinit".
+For more information about this security protection see the
+"Auto-loading safe path" section in the GDB manual.  E.g., run from the shell:
+	info "(gdb)Auto-loading safe path"
+#0  std::__find_if<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__ops::_Iter_equals_val<int const> > (__first=..., __last=..., __pred=...) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:122
+#1  0x00007fdcb2caa1d2 in std::__find_if<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__ops::_Iter_equals_val<int const> > (__first=..., __last=..., __pred=...) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:162
+#2  0x00007fdcb2ca9ccd in std::find<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int> (__first=..., __last=..., __val=@0x7ffc50e9c854: 295) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:3791
+#3  0x00007fdcb2ca9346 in ghost::Domain::index_of (this=0x7fdcb30ad740, value=295) at src/domain.cpp:78
+#4  0x0000000000407cf0 in ghost::Variable::set_value (this=0x7fdcb30ad6f0, value=295) at /usr/local/include/ghost/variable.hpp:146
+#5  0x000000000040e7fd in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffc50e9f540, variable=0x7fdcb30ad6f0, value=295, costConstraints=..., currentSatCost=7208) at /usr/local/include/ghost/solver.hpp:584
+#6  0x000000000040d2e3 in ghost::Solver<Unit, Stock>::local_move (this=0x7ffc50e9f540, variable=0x7fdcb30ad6f0, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffc50e9cb28: 7208) at /usr/local/include/ghost/solver.hpp:638
+#7  0x000000000040ac40 in ghost::Solver<Unit, Stock>::solve (this=0x7ffc50e9f540, finalCost=@0x7ffc50e9f538: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#8  0x000000000040950a in main (argc=1, argv=0x7ffc50ea1f98) at src/resource_problem.cpp:34
+A debugging session is active.
+
+	Inferior 1 [process 4475] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x00007fdcb2ca8f80 in __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >::operator++()@plt () from /usr/local/lib/libghost.so
+To enable execution of this file add
+	add-auto-load-safe-path /usr/local/lib64/libstdc++.so.6.0.21-gdb.py
+line to your configuration file "/home/flo/.gdbinit".
+To completely disable this security protection add
+	set auto-load safe-path /
+line to your configuration file "/home/flo/.gdbinit".
+For more information about this security protection see the
+"Auto-loading safe path" section in the GDB manual.  E.g., run from the shell:
+	info "(gdb)Auto-loading safe path"
+#0  0x00007fdcb2ca8f80 in __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >::operator++()@plt () from /usr/local/lib/libghost.so
+#1  0x00007fdcb2caa5d2 in std::__find_if<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__ops::_Iter_equals_val<int const> > (__first=..., __last=..., __pred=...) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:134
+#2  0x00007fdcb2caa1d2 in std::__find_if<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__ops::_Iter_equals_val<int const> > (__first=..., __last=..., __pred=...) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:162
+#3  0x00007fdcb2ca9ccd in std::find<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int> (__first=..., __last=..., __val=@0x7ffc50e9c754: 241) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:3791
+#4  0x00007fdcb2ca9346 in ghost::Domain::index_of (this=0x7fdcb30b4e20, value=241) at src/domain.cpp:78
+#5  0x0000000000407cf0 in ghost::Variable::set_value (this=0x7fdcb30b4dd0, value=241) at /usr/local/include/ghost/variable.hpp:146
+#6  0x000000000040e7fd in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffc50e9f540, variable=0x7fdcb30b4dd0, value=241, costConstraints=..., currentSatCost=0) at /usr/local/include/ghost/solver.hpp:584
+#7  0x000000000040c98d in ghost::Solver<Unit, Stock>::compute_variables_costs (this=0x7ffc50e9f540, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=0) at /usr/local/include/ghost/solver.hpp:484
+#8  0x000000000040d4fd in ghost::Solver<Unit, Stock>::local_move (this=0x7ffc50e9f540, variable=0x7fdcb30aaf50, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffc50e9cb28: 0) at /usr/local/include/ghost/solver.hpp:666
+#9  0x000000000040ac40 in ghost::Solver<Unit, Stock>::solve (this=0x7ffc50e9f540, finalCost=@0x7ffc50e9f538: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#10 0x000000000040950a in main (argc=1, argv=0x7ffc50ea1f98) at src/resource_problem.cpp:34
+A debugging session is active.
+
+	Inferior 1 [process 4475] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >::operator++ (this=0x7ffc48560b80) at /usr/local/include/c++/5.2.0/bits/stl_iterator.h:761
+761	      operator++() _GLIBCXX_NOEXCEPT
+To enable execution of this file add
+	add-auto-load-safe-path /usr/local/lib64/libstdc++.so.6.0.21-gdb.py
+line to your configuration file "/home/flo/.gdbinit".
+To completely disable this security protection add
+	set auto-load safe-path /
+line to your configuration file "/home/flo/.gdbinit".
+For more information about this security protection see the
+"Auto-loading safe path" section in the GDB manual.  E.g., run from the shell:
+	info "(gdb)Auto-loading safe path"
+#0  __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >::operator++ (this=0x7ffc48560b80) at /usr/local/include/c++/5.2.0/bits/stl_iterator.h:761
+#1  0x00007f63fedf35d2 in std::__find_if<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__ops::_Iter_equals_val<int const> > (__first=..., __last=..., __pred=...) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:134
+#2  0x00007f63fedf31d2 in std::__find_if<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__ops::_Iter_equals_val<int const> > (__first=..., __last=..., __pred=...) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:162
+#3  0x00007f63fedf2ccd in std::find<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int> (__first=..., __last=..., __val=@0x7ffc48560c74: 204) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:3791
+#4  0x00007f63fedf2346 in ghost::Domain::index_of (this=0x7f63ff1fb680, value=204) at src/domain.cpp:78
+#5  0x0000000000407cf0 in ghost::Variable::set_value (this=0x7f63ff1fb630, value=204) at /usr/local/include/ghost/variable.hpp:146
+#6  0x000000000040e7fd in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffc48563960, variable=0x7f63ff1fb630, value=204, costConstraints=..., currentSatCost=5800) at /usr/local/include/ghost/solver.hpp:584
+#7  0x000000000040d2e3 in ghost::Solver<Unit, Stock>::local_move (this=0x7ffc48563960, variable=0x7f63ff1fb630, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffc48560f48: 5800) at /usr/local/include/ghost/solver.hpp:638
+#8  0x000000000040ac40 in ghost::Solver<Unit, Stock>::solve (this=0x7ffc48563960, finalCost=@0x7ffc48563958: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#9  0x000000000040950a in main (argc=1, argv=0x7ffc485663b8) at src/resource_problem.cpp:34
+A debugging session is active.
+
+	Inferior 1 [process 4651] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x0000000000407e26 in std::vector<int, std::allocator<int> >::size (this=0x7f63ff2005c0) at /usr/local/include/c++/5.2.0/bits/stl_vector.h:655
+655	      { return size_type(this->_M_impl._M_finish - this->_M_impl._M_start); }
+To enable execution of this file add
+	add-auto-load-safe-path /usr/local/lib64/libstdc++.so.6.0.21-gdb.py
+line to your configuration file "/home/flo/.gdbinit".
+To completely disable this security protection add
+	set auto-load safe-path /
+line to your configuration file "/home/flo/.gdbinit".
+For more information about this security protection see the
+"Auto-loading safe path" section in the GDB manual.  E.g., run from the shell:
+	info "(gdb)Auto-loading safe path"
+#0  0x0000000000407e26 in std::vector<int, std::allocator<int> >::size (this=0x7f63ff2005c0) at /usr/local/include/c++/5.2.0/bits/stl_vector.h:655
+#1  0x0000000000409cf0 in ghost::Domain::get_size (this=0x7f63ff2005c0) at /usr/local/include/ghost/domain.hpp:106
+#2  0x00007f63fedf412a in ghost::Variable::possible_values (this=0x7f63ff200570) at src/variable.cpp:88
+#3  0x000000000040c90c in ghost::Solver<Unit, Stock>::compute_variables_costs (this=0x7ffc48563960, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=10611) at /usr/local/include/ghost/solver.hpp:479
+#4  0x000000000040aaa1 in ghost::Solver<Unit, Stock>::solve (this=0x7ffc48563960, finalCost=@0x7ffc48563958: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:310
+#5  0x000000000040950a in main (argc=1, argv=0x7ffc485663b8) at src/resource_problem.cpp:34
+A debugging session is active.
+
+	Inferior 1 [process 4651] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x0000000000404477 in Stock::required_cost (this=0x79fa80) at src/ctr_stock.cpp:25
+25	      costValue = v.get_mineral();
+To enable execution of this file add
+	add-auto-load-safe-path /usr/local/lib64/libstdc++.so.6.0.21-gdb.py
+line to your configuration file "/home/flo/.gdbinit".
+To completely disable this security protection add
+	set auto-load safe-path /
+line to your configuration file "/home/flo/.gdbinit".
+For more information about this security protection see the
+"Auto-loading safe path" section in the GDB manual.  E.g., run from the shell:
+	info "(gdb)Auto-loading safe path"
+#0  0x0000000000404477 in Stock::required_cost (this=0x79fa80) at src/ctr_stock.cpp:25
+#1  0x000000000040e2b5 in ghost::Constraint<Unit>::cost (this=0x79fa80) at /usr/local/include/ghost/constraint.hpp:102
+#2  0x000000000040e86e in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffc48563960, variable=0x7f63ff202d10, value=69, costConstraints=..., currentSatCost=0) at /usr/local/include/ghost/solver.hpp:586
+#3  0x000000000040c98d in ghost::Solver<Unit, Stock>::compute_variables_costs (this=0x7ffc48563960, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=0) at /usr/local/include/ghost/solver.hpp:484
+#4  0x000000000040d4fd in ghost::Solver<Unit, Stock>::local_move (this=0x7ffc48563960, variable=0x7f63ff1ef010, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffc48560f48: 0) at /usr/local/include/ghost/solver.hpp:666
+#5  0x000000000040ac40 in ghost::Solver<Unit, Stock>::solve (this=0x7ffc48563960, finalCost=@0x7ffc48563958: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#6  0x000000000040950a in main (argc=1, argv=0x7ffc485663b8) at src/resource_problem.cpp:34
+A debugging session is active.
+
+	Inferior 1 [process 4651] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x0000000000407e1a in std::vector<int, std::allocator<int> >::size (this=0x7f63fedf4721 <std::vector<int, std::allocator<int> >::emplace_back<int>(int&&)+75>) at /usr/local/include/c++/5.2.0/bits/stl_vector.h:654
+654	      size() const _GLIBCXX_NOEXCEPT
+To enable execution of this file add
+	add-auto-load-safe-path /usr/local/lib64/libstdc++.so.6.0.21-gdb.py
+line to your configuration file "/home/flo/.gdbinit".
+To completely disable this security protection add
+	set auto-load safe-path /
+line to your configuration file "/home/flo/.gdbinit".
+For more information about this security protection see the
+"Auto-loading safe path" section in the GDB manual.  E.g., run from the shell:
+	info "(gdb)Auto-loading safe path"
+#0  0x0000000000407e1a in std::vector<int, std::allocator<int> >::size (this=0x7f63fedf4721 <std::vector<int, std::allocator<int> >::emplace_back<int>(int&&)+75>) at /usr/local/include/c++/5.2.0/bits/stl_vector.h:654
+#1  0x00007f63fedf2298 in ghost::Domain::get_value (this=0x7f63ff1f6740, index=58) at src/domain.cpp:70
+#2  0x00007f63fedf4149 in ghost::Variable::possible_values (this=0x7f63ff1f66f0) at src/variable.cpp:89
+#3  0x000000000040c90c in ghost::Solver<Unit, Stock>::compute_variables_costs (this=0x7ffc48563960, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=94656) at /usr/local/include/ghost/solver.hpp:479
+#4  0x000000000040d4fd in ghost::Solver<Unit, Stock>::local_move (this=0x7ffc48563960, variable=0x7f63ff1f8e90, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffc48560f48: 94656) at /usr/local/include/ghost/solver.hpp:666
+#5  0x000000000040ac40 in ghost::Solver<Unit, Stock>::solve (this=0x7ffc48563960, finalCost=@0x7ffc48563958: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#6  0x000000000040950a in main (argc=1, argv=0x7ffc485663b8) at src/resource_problem.cpp:34
+A debugging session is active.
+
+	Inferior 1 [process 4651] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+std::__find_if<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__ops::_Iter_equals_val<int const> > (__first=..., __last=..., __pred=...) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:130
+130		  ++__first;
+To enable execution of this file add
+	add-auto-load-safe-path /usr/local/lib64/libstdc++.so.6.0.21-gdb.py
+line to your configuration file "/home/flo/.gdbinit".
+To completely disable this security protection add
+	set auto-load safe-path /
+line to your configuration file "/home/flo/.gdbinit".
+For more information about this security protection see the
+"Auto-loading safe path" section in the GDB manual.  E.g., run from the shell:
+	info "(gdb)Auto-loading safe path"
+#0  std::__find_if<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__ops::_Iter_equals_val<int const> > (__first=..., __last=..., __pred=...) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:130
+#1  0x00007fcfcd5cf1d2 in std::__find_if<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__ops::_Iter_equals_val<int const> > (__first=..., __last=..., __pred=...) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:162
+#2  0x00007fcfcd5ceccd in std::find<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int> (__first=..., __last=..., __val=@0x7ffd547b71f4: 198) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:3791
+#3  0x00007fcfcd5ce346 in ghost::Domain::index_of (this=0x7fcfcd9dc5c0, value=198) at src/domain.cpp:78
+#4  0x0000000000407cf0 in ghost::Variable::set_value (this=0x7fcfcd9dc570, value=198) at /usr/local/include/ghost/variable.hpp:146
+#5  0x000000000040e7fd in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffd547b9ee0, variable=0x7fcfcd9dc570, value=198, costConstraints=..., currentSatCost=31041) at /usr/local/include/ghost/solver.hpp:584
+#6  0x000000000040d2e3 in ghost::Solver<Unit, Stock>::local_move (this=0x7ffd547b9ee0, variable=0x7fcfcd9dc570, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffd547b74c8: 31041) at /usr/local/include/ghost/solver.hpp:638
+#7  0x000000000040ac40 in ghost::Solver<Unit, Stock>::solve (this=0x7ffd547b9ee0, finalCost=@0x7ffd547b9ed8: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#8  0x000000000040950a in main (argc=1, argv=0x7ffd547bc938) at src/resource_problem.cpp:34
+A debugging session is active.
+
+	Inferior 1 [process 4780] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x00007fcfcd5d0125 in ghost::Variable::possible_values (this=0x7fcfcd9dc570) at src/variable.cpp:88
+88	  for( int i = 0 ; i < (int)domain.get_size() ; ++i )
+To enable execution of this file add
+	add-auto-load-safe-path /usr/local/lib64/libstdc++.so.6.0.21-gdb.py
+line to your configuration file "/home/flo/.gdbinit".
+To completely disable this security protection add
+	set auto-load safe-path /
+line to your configuration file "/home/flo/.gdbinit".
+For more information about this security protection see the
+"Auto-loading safe path" section in the GDB manual.  E.g., run from the shell:
+	info "(gdb)Auto-loading safe path"
+#0  0x00007fcfcd5d0125 in ghost::Variable::possible_values (this=0x7fcfcd9dc570) at src/variable.cpp:88
+#1  0x000000000040c90c in ghost::Solver<Unit, Stock>::compute_variables_costs (this=0x7ffd547b9ee0, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=116549) at /usr/local/include/ghost/solver.hpp:479
+#2  0x000000000040d4fd in ghost::Solver<Unit, Stock>::local_move (this=0x7ffd547b9ee0, variable=0x7fcfcd9cd7b0, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffd547b74c8: 116549) at /usr/local/include/ghost/solver.hpp:666
+#3  0x000000000040ac40 in ghost::Solver<Unit, Stock>::solve (this=0x7ffd547b9ee0, finalCost=@0x7ffd547b9ed8: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#4  0x000000000040950a in main (argc=1, argv=0x7ffd547bc938) at src/resource_problem.cpp:34
+A debugging session is active.
+
+	Inferior 1 [process 4780] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x00007fcfcd5ce2bd in ghost::Domain::get_value (this=0x7fcfcd9d9e20, index=142) at src/domain.cpp:71
+71	    return _domain[ index ];
+To enable execution of this file add
+	add-auto-load-safe-path /usr/local/lib64/libstdc++.so.6.0.21-gdb.py
+line to your configuration file "/home/flo/.gdbinit".
+To completely disable this security protection add
+	set auto-load safe-path /
+line to your configuration file "/home/flo/.gdbinit".
+For more information about this security protection see the
+"Auto-loading safe path" section in the GDB manual.  E.g., run from the shell:
+	info "(gdb)Auto-loading safe path"
+#0  0x00007fcfcd5ce2bd in ghost::Domain::get_value (this=0x7fcfcd9d9e20, index=142) at src/domain.cpp:71
+#1  0x00000000004045c2 in ghost::Variable::get_value (this=0x7fcfcd9d9dd0) at /usr/local/include/ghost/variable.hpp:137
+#2  0x00000000004044d8 in Stock::required_cost (this=0x239cf30) at src/ctr_stock.cpp:37
+#3  0x000000000040e2b5 in ghost::Constraint<Unit>::cost (this=0x239cf30) at /usr/local/include/ghost/constraint.hpp:102
+#4  0x000000000040e86e in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffd547b9ee0, variable=0x7fcfcd9d26f0, value=85, costConstraints=..., currentSatCost=19408) at /usr/local/include/ghost/solver.hpp:586
+#5  0x000000000040c98d in ghost::Solver<Unit, Stock>::compute_variables_costs (this=0x7ffd547b9ee0, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=19408) at /usr/local/include/ghost/solver.hpp:484
+#6  0x000000000040aaa1 in ghost::Solver<Unit, Stock>::solve (this=0x7ffd547b9ee0, finalCost=@0x7ffd547b9ed8: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:310
+#7  0x000000000040950a in main (argc=1, argv=0x7ffd547bc938) at src/resource_problem.cpp:34
+A debugging session is active.
+
+	Inferior 1 [process 4780] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+std::__find_if<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__ops::_Iter_equals_val<int const> > (__first=..., __last=..., __pred=...) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:126
+126		  ++__first;
+To enable execution of this file add
+	add-auto-load-safe-path /usr/local/lib64/libstdc++.so.6.0.21-gdb.py
+line to your configuration file "/home/flo/.gdbinit".
+To completely disable this security protection add
+	set auto-load safe-path /
+line to your configuration file "/home/flo/.gdbinit".
+For more information about this security protection see the
+"Auto-loading safe path" section in the GDB manual.  E.g., run from the shell:
+	info "(gdb)Auto-loading safe path"
+#0  std::__find_if<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__ops::_Iter_equals_val<int const> > (__first=..., __last=..., __pred=...) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:126
+#1  0x00007fcfcd5cf1d2 in std::__find_if<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__ops::_Iter_equals_val<int const> > (__first=..., __last=..., __pred=...) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:162
+#2  0x00007fcfcd5ceccd in std::find<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int> (__first=..., __last=..., __val=@0x7ffd547b71f4: 335) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:3791
+#3  0x00007fcfcd5ce346 in ghost::Domain::index_of (this=0x7fcfcd9dc5c0, value=335) at src/domain.cpp:78
+#4  0x0000000000407cf0 in ghost::Variable::set_value (this=0x7fcfcd9dc570, value=335) at /usr/local/include/ghost/variable.hpp:146
+#5  0x000000000040e7fd in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffd547b9ee0, variable=0x7fcfcd9dc570, value=335, costConstraints=..., currentSatCost=36403) at /usr/local/include/ghost/solver.hpp:584
+#6  0x000000000040d2e3 in ghost::Solver<Unit, Stock>::local_move (this=0x7ffd547b9ee0, variable=0x7fcfcd9dc570, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffd547b74c8: 36403) at /usr/local/include/ghost/solver.hpp:638
+#7  0x000000000040ac40 in ghost::Solver<Unit, Stock>::solve (this=0x7ffd547b9ee0, finalCost=@0x7ffd547b9ed8: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#8  0x000000000040950a in main (argc=1, argv=0x7ffd547bc938) at src/resource_problem.cpp:34
+A debugging session is active.
+
+	Inferior 1 [process 4780] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x00007f401217c51d in std::vector<int, std::allocator<int> >::push_back(int&&) (this=0x7ffc5d0611d0, __x=<unknown type in /usr/local/lib/libghost.so, CU 0xa5d2, DIE 0x12911>) at /usr/local/include/c++/5.2.0/bits/stl_vector.h:932
+932	      { emplace_back(std::move(__x)); }
+To enable execution of this file add
+	add-auto-load-safe-path /usr/local/lib64/libstdc++.so.6.0.21-gdb.py
+line to your configuration file "/home/flo/.gdbinit".
+To completely disable this security protection add
+	set auto-load safe-path /
+line to your configuration file "/home/flo/.gdbinit".
+For more information about this security protection see the
+"Auto-loading safe path" section in the GDB manual.  E.g., run from the shell:
+	info "(gdb)Auto-loading safe path"
+#0  0x00007f401217c51d in std::vector<int, std::allocator<int> >::push_back(int&&) (this=0x7ffc5d0611d0, __x=<unknown type in /usr/local/lib/libghost.so, CU 0xa5d2, DIE 0x12911>) at /usr/local/include/c++/5.2.0/bits/stl_vector.h:932
+#1  0x00007f401217c15f in ghost::Variable::possible_values (this=0x7f4012588570) at src/variable.cpp:89
+#2  0x000000000040c90c in ghost::Solver<Unit, Stock>::compute_variables_costs (this=0x7ffc5d063d90, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=93126) at /usr/local/include/ghost/solver.hpp:479
+#3  0x000000000040aaa1 in ghost::Solver<Unit, Stock>::solve (this=0x7ffc5d063d90, finalCost=@0x7ffc5d063d88: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:310
+#4  0x000000000040950a in main (argc=1, argv=0x7ffc5d0667e8) at src/resource_problem.cpp:34
+A debugging session is active.
+
+	Inferior 1 [process 4891] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x00007f401217b904 in __gnu_cxx::__ops::_Iter_equals_val<int const>::operator()<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > > (this=0x7ffc5d060fc0, __it=...) at /usr/local/include/c++/5.2.0/bits/predefined_ops.h:194
+194		{ return *__it == _M_value; }
+To enable execution of this file add
+	add-auto-load-safe-path /usr/local/lib64/libstdc++.so.6.0.21-gdb.py
+line to your configuration file "/home/flo/.gdbinit".
+To completely disable this security protection add
+	set auto-load safe-path /
+line to your configuration file "/home/flo/.gdbinit".
+For more information about this security protection see the
+"Auto-loading safe path" section in the GDB manual.  E.g., run from the shell:
+	info "(gdb)Auto-loading safe path"
+#0  0x00007f401217b904 in __gnu_cxx::__ops::_Iter_equals_val<int const>::operator()<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > > (this=0x7ffc5d060fc0, __it=...) at /usr/local/include/c++/5.2.0/bits/predefined_ops.h:194
+#1  0x00007f401217b535 in std::__find_if<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__ops::_Iter_equals_val<int const> > (__first=..., __last=..., __pred=...) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:120
+#2  0x00007f401217b1d2 in std::__find_if<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__ops::_Iter_equals_val<int const> > (__first=..., __last=..., __pred=...) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:162
+#3  0x00007f401217accd in std::find<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int> (__first=..., __last=..., __val=@0x7ffc5d0610b4: 281) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:3791
+#4  0x00007f401217a346 in ghost::Domain::index_of (this=0x7f40125885c0, value=281) at src/domain.cpp:78
+#5  0x0000000000407cf0 in ghost::Variable::set_value (this=0x7f4012588570, value=281) at /usr/local/include/ghost/variable.hpp:146
+#6  0x000000000040e7fd in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffc5d063d90, variable=0x7f4012588570, value=281, costConstraints=..., currentSatCost=87253) at /usr/local/include/ghost/solver.hpp:584
+#7  0x000000000040c98d in ghost::Solver<Unit, Stock>::compute_variables_costs (this=0x7ffc5d063d90, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=87253) at /usr/local/include/ghost/solver.hpp:484
+#8  0x000000000040aaa1 in ghost::Solver<Unit, Stock>::solve (this=0x7ffc5d063d90, finalCost=@0x7ffc5d063d88: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:310
+#9  0x000000000040950a in main (argc=1, argv=0x7ffc5d0667e8) at src/resource_problem.cpp:34
+A debugging session is active.
+
+	Inferior 1 [process 4891] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+operator new (__p=0x3) at /usr/local/include/c++/5.2.0/new:130
+130	{ return __p; }
+To enable execution of this file add
+	add-auto-load-safe-path /usr/local/lib64/libstdc++.so.6.0.21-gdb.py
+line to your configuration file "/home/flo/.gdbinit".
+To completely disable this security protection add
+	set auto-load safe-path /
+line to your configuration file "/home/flo/.gdbinit".
+For more information about this security protection see the
+"Auto-loading safe path" section in the GDB manual.  E.g., run from the shell:
+	info "(gdb)Auto-loading safe path"
+#0  operator new (__p=0x3) at /usr/local/include/c++/5.2.0/new:130
+#1  0x00007f401217ce0a in __gnu_cxx::new_allocator<int>::construct<int, int>(int*, int&&) (this=0x7ffc5d0611d0, __p=0x19101d0) at /usr/local/include/c++/5.2.0/ext/new_allocator.h:120
+#2  0x00007f401217cc64 in std::allocator_traits<std::allocator<int> >::_S_construct<int, int>(std::allocator<int>&, int*, int&&) (__a=..., __p=0x19101d0) at /usr/local/include/c++/5.2.0/bits/alloc_traits.h:256
+#3  0x00007f401217c882 in std::allocator_traits<std::allocator<int> >::construct<int, int>(std::allocator<int>&, int*, int&&) (__a=..., __p=0x19101d0) at /usr/local/include/c++/5.2.0/bits/alloc_traits.h:402
+#4  0x00007f401217c90f in std::vector<int, std::allocator<int> >::_M_emplace_back_aux<int>(int&&) (this=0x7ffc5d0611d0) at /usr/local/include/c++/5.2.0/bits/vector.tcc:416
+#5  0x00007f401217c755 in std::vector<int, std::allocator<int> >::emplace_back<int>(int&&) (this=0x7ffc5d0611d0) at /usr/local/include/c++/5.2.0/bits/vector.tcc:101
+#6  0x00007f401217c528 in std::vector<int, std::allocator<int> >::push_back(int&&) (this=0x7ffc5d0611d0, __x=<unknown type in /usr/local/lib/libghost.so, CU 0xa5d2, DIE 0x12911>) at /usr/local/include/c++/5.2.0/bits/stl_vector.h:932
+#7  0x00007f401217c15f in ghost::Variable::possible_values (this=0x7f40125797b0) at src/variable.cpp:89
+#8  0x000000000040c90c in ghost::Solver<Unit, Stock>::compute_variables_costs (this=0x7ffc5d063d90, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=10710) at /usr/local/include/ghost/solver.hpp:479
+#9  0x000000000040aaa1 in ghost::Solver<Unit, Stock>::solve (this=0x7ffc5d063d90, finalCost=@0x7ffc5d063d88: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:310
+#10 0x000000000040950a in main (argc=1, argv=0x7ffc5d0667e8) at src/resource_problem.cpp:34
+A debugging session is active.
+
+	Inferior 1 [process 4891] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x00007f401217b904 in __gnu_cxx::__ops::_Iter_equals_val<int const>::operator()<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > > (this=0x7ffc5d060fb0, __it=...) at /usr/local/include/c++/5.2.0/bits/predefined_ops.h:194
+194		{ return *__it == _M_value; }
+To enable execution of this file add
+	add-auto-load-safe-path /usr/local/lib64/libstdc++.so.6.0.21-gdb.py
+line to your configuration file "/home/flo/.gdbinit".
+To completely disable this security protection add
+	set auto-load safe-path /
+line to your configuration file "/home/flo/.gdbinit".
+For more information about this security protection see the
+"Auto-loading safe path" section in the GDB manual.  E.g., run from the shell:
+	info "(gdb)Auto-loading safe path"
+#0  0x00007f401217b904 in __gnu_cxx::__ops::_Iter_equals_val<int const>::operator()<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > > (this=0x7ffc5d060fb0, __it=...) at /usr/local/include/c++/5.2.0/bits/predefined_ops.h:194
+#1  0x00007f401217b5b9 in std::__find_if<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__ops::_Iter_equals_val<int const> > (__first=..., __last=..., __pred=...) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:132
+#2  0x00007f401217b1d2 in std::__find_if<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__ops::_Iter_equals_val<int const> > (__first=..., __last=..., __pred=...) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:162
+#3  0x00007f401217accd in std::find<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int> (__first=..., __last=..., __val=@0x7ffc5d0610a4: 103) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:3791
+#4  0x00007f401217a346 in ghost::Domain::index_of (this=0x7f4012580ee0, value=103) at src/domain.cpp:78
+#5  0x0000000000407cf0 in ghost::Variable::set_value (this=0x7f4012580e90, value=103) at /usr/local/include/ghost/variable.hpp:146
+#6  0x000000000040e7fd in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffc5d063d90, variable=0x7f4012580e90, value=103, costConstraints=..., currentSatCost=1700) at /usr/local/include/ghost/solver.hpp:584
+#7  0x000000000040d2e3 in ghost::Solver<Unit, Stock>::local_move (this=0x7ffc5d063d90, variable=0x7f4012580e90, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffc5d061378: 1700) at /usr/local/include/ghost/solver.hpp:638
+#8  0x000000000040ac40 in ghost::Solver<Unit, Stock>::solve (this=0x7ffc5d063d90, finalCost=@0x7ffc5d063d88: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#9  0x000000000040950a in main (argc=1, argv=0x7ffc5d0667e8) at src/resource_problem.cpp:34
+A debugging session is active.
+
+	Inferior 1 [process 4891] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x000000000040459e in ghost::Variable::get_value (this=0x7fa4b92ffdd0) at /usr/local/include/ghost/variable.hpp:137
+137	    inline int get_value() const { return domain.get_value( index ); }
+To enable execution of this file add
+	add-auto-load-safe-path /usr/local/lib64/libstdc++.so.6.0.21-gdb.py
+line to your configuration file "/home/flo/.gdbinit".
+To completely disable this security protection add
+	set auto-load safe-path /
+line to your configuration file "/home/flo/.gdbinit".
+For more information about this security protection see the
+"Auto-loading safe path" section in the GDB manual.  E.g., run from the shell:
+	info "(gdb)Auto-loading safe path"
+#0  0x000000000040459e in ghost::Variable::get_value (this=0x7fa4b92ffdd0) at /usr/local/include/ghost/variable.hpp:137
+#1  0x00000000004044d8 in Stock::required_cost (this=0x21e7940) at src/ctr_stock.cpp:37
+#2  0x000000000040e2b5 in ghost::Constraint<Unit>::cost (this=0x21e7940) at /usr/local/include/ghost/constraint.hpp:102
+#3  0x000000000040e86e in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffe8d0858c0, variable=0x7fa4b92ffdd0, value=54, costConstraints=..., currentSatCost=26316) at /usr/local/include/ghost/solver.hpp:586
+#4  0x000000000040c98d in ghost::Solver<Unit, Stock>::compute_variables_costs (this=0x7ffe8d0858c0, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=26316) at /usr/local/include/ghost/solver.hpp:484
+#5  0x000000000040aaa1 in ghost::Solver<Unit, Stock>::solve (this=0x7ffe8d0858c0, finalCost=@0x7ffe8d0858b8: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:310
+#6  0x000000000040950a in main (argc=1, argv=0x7ffe8d088318) at src/resource_problem.cpp:34
+A debugging session is active.
+
+	Inferior 1 [process 5026] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x000000000040f215 in std::map<Unit, std::vector<Stock, std::allocator<Stock> >, ghost::Solver<Unit, Stock>::VarComp, std::allocator<std::pair<Unit const, std::vector<Stock, std::allocator<Stock> > > > >::end (this=0x7ffe8d088030) at /usr/local/include/c++/5.2.0/bits/stl_map.h:357
+357	      { return _M_t.end(); }
+To enable execution of this file add
+	add-auto-load-safe-path /usr/local/lib64/libstdc++.so.6.0.21-gdb.py
+line to your configuration file "/home/flo/.gdbinit".
+To completely disable this security protection add
+	set auto-load safe-path /
+line to your configuration file "/home/flo/.gdbinit".
+For more information about this security protection see the
+"Auto-loading safe path" section in the GDB manual.  E.g., run from the shell:
+	info "(gdb)Auto-loading safe path"
+#0  0x000000000040f215 in std::map<Unit, std::vector<Stock, std::allocator<Stock> >, ghost::Solver<Unit, Stock>::VarComp, std::allocator<std::pair<Unit const, std::vector<Stock, std::allocator<Stock> > > > >::end (this=0x7ffe8d088030) at /usr/local/include/c++/5.2.0/bits/stl_map.h:357
+#1  0x000000000040db37 in std::map<Unit, std::vector<Stock, std::allocator<Stock> >, ghost::Solver<Unit, Stock>::VarComp, std::allocator<std::pair<Unit const, std::vector<Stock, std::allocator<Stock> > > > >::operator[] (this=0x7ffe8d088030, __k=...) at /usr/local/include/c++/5.2.0/bits/stl_map.h:481
+#2  0x000000000040e817 in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffe8d0858c0, variable=0x7fa4b92fd630, value=378, costConstraints=..., currentSatCost=5844) at /usr/local/include/ghost/solver.hpp:585
+#3  0x000000000040d2e3 in ghost::Solver<Unit, Stock>::local_move (this=0x7ffe8d0858c0, variable=0x7fa4b92fd630, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffe8d082ea8: 5844) at /usr/local/include/ghost/solver.hpp:638
+#4  0x000000000040ac40 in ghost::Solver<Unit, Stock>::solve (this=0x7ffe8d0858c0, finalCost=@0x7ffe8d0858b8: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#5  0x000000000040950a in main (argc=1, argv=0x7ffe8d088318) at src/resource_problem.cpp:34
+A debugging session is active.
+
+	Inferior 1 [process 5026] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x00007fa4b8ef5904 in __gnu_cxx::__ops::_Iter_equals_val<int const>::operator()<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > > (this=0x7ffe8d082af0, __it=...) at /usr/local/include/c++/5.2.0/bits/predefined_ops.h:194
+194		{ return *__it == _M_value; }
+To enable execution of this file add
+	add-auto-load-safe-path /usr/local/lib64/libstdc++.so.6.0.21-gdb.py
+line to your configuration file "/home/flo/.gdbinit".
+To completely disable this security protection add
+	set auto-load safe-path /
+line to your configuration file "/home/flo/.gdbinit".
+For more information about this security protection see the
+"Auto-loading safe path" section in the GDB manual.  E.g., run from the shell:
+	info "(gdb)Auto-loading safe path"
+#0  0x00007fa4b8ef5904 in __gnu_cxx::__ops::_Iter_equals_val<int const>::operator()<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > > (this=0x7ffe8d082af0, __it=...) at /usr/local/include/c++/5.2.0/bits/predefined_ops.h:194
+#1  0x00007fa4b8ef5561 in std::__find_if<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__ops::_Iter_equals_val<int const> > (__first=..., __last=..., __pred=...) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:124
+#2  0x00007fa4b8ef51d2 in std::__find_if<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__ops::_Iter_equals_val<int const> > (__first=..., __last=..., __pred=...) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:162
+#3  0x00007fa4b8ef4ccd in std::find<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int> (__first=..., __last=..., __val=@0x7ffe8d082be4: 272) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:3791
+#4  0x00007fa4b8ef4346 in ghost::Domain::index_of (this=0x7fa4b92faee0, value=272) at src/domain.cpp:78
+#5  0x0000000000407cf0 in ghost::Variable::set_value (this=0x7fa4b92fae90, value=272) at /usr/local/include/ghost/variable.hpp:146
+#6  0x000000000040e7fd in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffe8d0858c0, variable=0x7fa4b92fae90, value=272, costConstraints=..., currentSatCost=167853) at /usr/local/include/ghost/solver.hpp:584
+#7  0x000000000040c98d in ghost::Solver<Unit, Stock>::compute_variables_costs (this=0x7ffe8d0858c0, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=167853) at /usr/local/include/ghost/solver.hpp:484
+#8  0x000000000040aaa1 in ghost::Solver<Unit, Stock>::solve (this=0x7ffe8d0858c0, finalCost=@0x7ffe8d0858b8: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:310
+#9  0x000000000040950a in main (argc=1, argv=0x7ffe8d088318) at src/resource_problem.cpp:34
+A debugging session is active.
+
+	Inferior 1 [process 5026] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x00007fa4b8ef590d in __gnu_cxx::__ops::_Iter_equals_val<int const>::operator()<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > > (this=0x7ffe8d082ae0, __it=...) at /usr/local/include/c++/5.2.0/bits/predefined_ops.h:194
+194		{ return *__it == _M_value; }
+To enable execution of this file add
+	add-auto-load-safe-path /usr/local/lib64/libstdc++.so.6.0.21-gdb.py
+line to your configuration file "/home/flo/.gdbinit".
+To completely disable this security protection add
+	set auto-load safe-path /
+line to your configuration file "/home/flo/.gdbinit".
+For more information about this security protection see the
+"Auto-loading safe path" section in the GDB manual.  E.g., run from the shell:
+	info "(gdb)Auto-loading safe path"
+#0  0x00007fa4b8ef590d in __gnu_cxx::__ops::_Iter_equals_val<int const>::operator()<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > > (this=0x7ffe8d082ae0, __it=...) at /usr/local/include/c++/5.2.0/bits/predefined_ops.h:194
+#1  0x00007fa4b8ef5535 in std::__find_if<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__ops::_Iter_equals_val<int const> > (__first=..., __last=..., __pred=...) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:120
+#2  0x00007fa4b8ef51d2 in std::__find_if<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__ops::_Iter_equals_val<int const> > (__first=..., __last=..., __pred=...) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:162
+#3  0x00007fa4b8ef4ccd in std::find<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int> (__first=..., __last=..., __val=@0x7ffe8d082bd4: 239) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:3791
+#4  0x00007fa4b8ef4346 in ghost::Domain::index_of (this=0x7fa4b92ffe20, value=239) at src/domain.cpp:78
+#5  0x0000000000407cf0 in ghost::Variable::set_value (this=0x7fa4b92ffdd0, value=239) at /usr/local/include/ghost/variable.hpp:146
+#6  0x000000000040e7fd in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffe8d0858c0, variable=0x7fa4b92ffdd0, value=239, costConstraints=..., currentSatCost=14004) at /usr/local/include/ghost/solver.hpp:584
+#7  0x000000000040d2e3 in ghost::Solver<Unit, Stock>::local_move (this=0x7ffe8d0858c0, variable=0x7fa4b92ffdd0, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffe8d082ea8: 14004) at /usr/local/include/ghost/solver.hpp:638
+#8  0x000000000040ac40 in ghost::Solver<Unit, Stock>::solve (this=0x7ffe8d0858c0, finalCost=@0x7ffe8d0858b8: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#9  0x000000000040950a in main (argc=1, argv=0x7ffe8d088318) at src/resource_problem.cpp:34
+A debugging session is active.
+
+	Inferior 1 [process 5026] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x000000000040e8ab in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffe2f2165d0, variable=0x7fb207c98570, value=355, costConstraints=..., currentSatCost=64232) at /usr/local/include/ghost/solver.hpp:586
+586	      newCurrentSatCost += ( c.cost() - costConstraints[ c.get_id() ] );
+To enable execution of this file add
+	add-auto-load-safe-path /usr/local/lib64/libstdc++.so.6.0.21-gdb.py
+line to your configuration file "/home/flo/.gdbinit".
+To completely disable this security protection add
+	set auto-load safe-path /
+line to your configuration file "/home/flo/.gdbinit".
+For more information about this security protection see the
+"Auto-loading safe path" section in the GDB manual.  E.g., run from the shell:
+	info "(gdb)Auto-loading safe path"
+#0  0x000000000040e8ab in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffe2f2165d0, variable=0x7fb207c98570, value=355, costConstraints=..., currentSatCost=64232) at /usr/local/include/ghost/solver.hpp:586
+#1  0x000000000040c98d in ghost::Solver<Unit, Stock>::compute_variables_costs (this=0x7ffe2f2165d0, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=64232) at /usr/local/include/ghost/solver.hpp:484
+#2  0x000000000040d4fd in ghost::Solver<Unit, Stock>::local_move (this=0x7ffe2f2165d0, variable=0x7fb207c9ad10, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffe2f213bb8: 64232) at /usr/local/include/ghost/solver.hpp:666
+#3  0x000000000040ac40 in ghost::Solver<Unit, Stock>::solve (this=0x7ffe2f2165d0, finalCost=@0x7ffe2f2165c8: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#4  0x000000000040950a in main (argc=1, argv=0x7ffe2f219028) at src/resource_problem.cpp:34
+A debugging session is active.
+
+	Inferior 1 [process 5184] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >::operator++ (this=0x7ffe2f213810) at /usr/local/include/c++/5.2.0/bits/stl_iterator.h:765
+765	      }
+To enable execution of this file add
+	add-auto-load-safe-path /usr/local/lib64/libstdc++.so.6.0.21-gdb.py
+line to your configuration file "/home/flo/.gdbinit".
+To completely disable this security protection add
+	set auto-load safe-path /
+line to your configuration file "/home/flo/.gdbinit".
+For more information about this security protection see the
+"Auto-loading safe path" section in the GDB manual.  E.g., run from the shell:
+	info "(gdb)Auto-loading safe path"
+#0  __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >::operator++ (this=0x7ffe2f213810) at /usr/local/include/c++/5.2.0/bits/stl_iterator.h:765
+#1  0x00007fb20788b5d2 in std::__find_if<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__ops::_Iter_equals_val<int const> > (__first=..., __last=..., __pred=...) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:134
+#2  0x00007fb20788b1d2 in std::__find_if<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__ops::_Iter_equals_val<int const> > (__first=..., __last=..., __pred=...) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:162
+#3  0x00007fb20788accd in std::find<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int> (__first=..., __last=..., __val=@0x7ffe2f2138e4: 259) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:3791
+#4  0x00007fb20788a346 in ghost::Domain::index_of (this=0x7fb207c8e740, value=259) at src/domain.cpp:78
+#5  0x0000000000407cf0 in ghost::Variable::set_value (this=0x7fb207c8e6f0, value=259) at /usr/local/include/ghost/variable.hpp:146
+#6  0x000000000040e7fd in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffe2f2165d0, variable=0x7fb207c8e6f0, value=259, costConstraints=..., currentSatCost=31413) at /usr/local/include/ghost/solver.hpp:584
+#7  0x000000000040d2e3 in ghost::Solver<Unit, Stock>::local_move (this=0x7ffe2f2165d0, variable=0x7fb207c8e6f0, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffe2f213bb8: 31413) at /usr/local/include/ghost/solver.hpp:638
+#8  0x000000000040ac40 in ghost::Solver<Unit, Stock>::solve (this=0x7ffe2f2165d0, finalCost=@0x7ffe2f2165c8: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#9  0x000000000040950a in main (argc=1, argv=0x7ffe2f219028) at src/resource_problem.cpp:34
+A debugging session is active.
+
+	Inferior 1 [process 5184] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+std::vector<int, std::allocator<int> >::begin (this=0x7fb207c89800) at /usr/local/include/c++/5.2.0/bits/stl_vector.h:557
+557	      { return const_iterator(this->_M_impl._M_start); }
+To enable execution of this file add
+	add-auto-load-safe-path /usr/local/lib64/libstdc++.so.6.0.21-gdb.py
+line to your configuration file "/home/flo/.gdbinit".
+To completely disable this security protection add
+	set auto-load safe-path /
+line to your configuration file "/home/flo/.gdbinit".
+For more information about this security protection see the
+"Auto-loading safe path" section in the GDB manual.  E.g., run from the shell:
+	info "(gdb)Auto-loading safe path"
+#0  std::vector<int, std::allocator<int> >::begin (this=0x7fb207c89800) at /usr/local/include/c++/5.2.0/bits/stl_vector.h:557
+#1  0x00007fb20788a8e4 in std::begin<std::vector<int, std::allocator<int> > > (__cont=...) at /usr/local/include/c++/5.2.0/bits/range_access.h:59
+#2  0x00007fb20788a3b5 in ghost::Domain::index_of (this=0x7fb207c89800, value=89) at src/domain.cpp:82
+#3  0x0000000000407cf0 in ghost::Variable::set_value (this=0x7fb207c897b0, value=89) at /usr/local/include/ghost/variable.hpp:146
+#4  0x000000000040e7fd in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffe2f2165d0, variable=0x7fb207c897b0, value=89, costConstraints=..., currentSatCost=7362) at /usr/local/include/ghost/solver.hpp:584
+#5  0x000000000040d2e3 in ghost::Solver<Unit, Stock>::local_move (this=0x7ffe2f2165d0, variable=0x7fb207c897b0, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffe2f213bb8: 7362) at /usr/local/include/ghost/solver.hpp:638
+#6  0x000000000040ac40 in ghost::Solver<Unit, Stock>::solve (this=0x7ffe2f2165d0, finalCost=@0x7ffe2f2165c8: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#7  0x000000000040950a in main (argc=1, argv=0x7ffe2f219028) at src/resource_problem.cpp:34
+A debugging session is active.
+
+	Inferior 1 [process 5184] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x00000000004090fb in std::__copy_move_a<true, int*, int*> (__first=<error reading variable: can't compute CFA for this frame>, __last=<error reading variable: can't compute CFA for this frame>, __result=<error reading variable: can't compute CFA for this frame>) at /usr/local/include/c++/5.2.0/bits/stl_algobase.h:401
+401	    }
+To enable execution of this file add
+	add-auto-load-safe-path /usr/local/lib64/libstdc++.so.6.0.21-gdb.py
+line to your configuration file "/home/flo/.gdbinit".
+To completely disable this security protection add
+	set auto-load safe-path /
+line to your configuration file "/home/flo/.gdbinit".
+For more information about this security protection see the
+"Auto-loading safe path" section in the GDB manual.  E.g., run from the shell:
+	info "(gdb)Auto-loading safe path"
+#0  0x00000000004090fb in std::__copy_move_a<true, int*, int*> (__first=<error reading variable: can't compute CFA for this frame>, __last=<error reading variable: can't compute CFA for this frame>, __result=<error reading variable: can't compute CFA for this frame>) at /usr/local/include/c++/5.2.0/bits/stl_algobase.h:401
+#1  0x000000000040908e in std::__copy_move_a2<true, int*, int*> (__first=0x0, __last=0x0, __result=0xfce1c0) at /usr/local/include/c++/5.2.0/bits/stl_algobase.h:438
+#2  0x000000000040901e in std::copy<std::move_iterator<int*>, int*> (__first=..., __last=..., __result=0xfce1c0) at /usr/local/include/c++/5.2.0/bits/stl_algobase.h:470
+#3  0x0000000000408fd7 in std::__uninitialized_copy<true>::__uninit_copy<std::move_iterator<int*>, int*> (__first=..., __last=..., __result=0xfce1c0) at /usr/local/include/c++/5.2.0/bits/stl_uninitialized.h:93
+#4  0x0000000000408f69 in std::uninitialized_copy<std::move_iterator<int*>, int*> (__first=..., __last=..., __result=0xfce1c0) at /usr/local/include/c++/5.2.0/bits/stl_uninitialized.h:126
+#5  0x0000000000408e7e in std::__uninitialized_copy_a<std::move_iterator<int*>, int*, int> (__first=..., __last=..., __result=0xfce1c0) at /usr/local/include/c++/5.2.0/bits/stl_uninitialized.h:281
+#6  0x0000000000408d50 in std::__uninitialized_move_if_noexcept_a<int*, int*, std::allocator<int> > (__first=0x0, __last=0x0, __result=0xfce1c0, __alloc=...) at /usr/local/include/c++/5.2.0/bits/stl_uninitialized.h:304
+#7  0x00007fb20788c941 in std::vector<int, std::allocator<int> >::_M_emplace_back_aux<int>(int&&) (this=0x7ffe2f213900) at /usr/local/include/c++/5.2.0/bits/vector.tcc:420
+#8  0x00007fb20788c755 in std::vector<int, std::allocator<int> >::emplace_back<int>(int&&) (this=0x7ffe2f213900) at /usr/local/include/c++/5.2.0/bits/vector.tcc:101
+#9  0x00007fb20788c528 in std::vector<int, std::allocator<int> >::push_back(int&&) (this=0x7ffe2f213900, __x=<unknown type in /usr/local/lib/libghost.so, CU 0xa5d2, DIE 0x12911>) at /usr/local/include/c++/5.2.0/bits/stl_vector.h:932
+#10 0x00007fb20788c15f in ghost::Variable::possible_values (this=0x7fb207c87010) at src/variable.cpp:89
+#11 0x000000000040c90c in ghost::Solver<Unit, Stock>::compute_variables_costs (this=0x7ffe2f2165d0, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=4825) at /usr/local/include/ghost/solver.hpp:479
+#12 0x000000000040d4fd in ghost::Solver<Unit, Stock>::local_move (this=0x7ffe2f2165d0, variable=0x7fb207c93630, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffe2f213bb8: 4825) at /usr/local/include/ghost/solver.hpp:666
+#13 0x000000000040ac40 in ghost::Solver<Unit, Stock>::solve (this=0x7ffe2f2165d0, finalCost=@0x7ffe2f2165c8: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#14 0x000000000040950a in main (argc=1, argv=0x7ffe2f219028) at src/resource_problem.cpp:34
+A debugging session is active.
+
+	Inferior 1 [process 5184] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x0000000000409fb0 in std::vector<int, std::allocator<int> >::operator[] (this=0x7fa929138060, __n=208) at /usr/local/include/c++/5.2.0/bits/stl_vector.h:795
+795	      { return *(this->_M_impl._M_start + __n); }
+To enable execution of this file add
+	add-auto-load-safe-path /usr/local/lib64/libstdc++.so.6.0.21-gdb.py
+line to your configuration file "/home/flo/.gdbinit".
+To completely disable this security protection add
+	set auto-load safe-path /
+line to your configuration file "/home/flo/.gdbinit".
+For more information about this security protection see the
+"Auto-loading safe path" section in the GDB manual.  E.g., run from the shell:
+	info "(gdb)Auto-loading safe path"
+#0  0x0000000000409fb0 in std::vector<int, std::allocator<int> >::operator[] (this=0x7fa929138060, __n=208) at /usr/local/include/c++/5.2.0/bits/stl_vector.h:795
+#1  0x00007fa928d3b2c2 in ghost::Domain::get_value (this=0x7fa929138060, index=208) at src/domain.cpp:71
+#2  0x00000000004045c2 in ghost::Variable::get_value (this=0x7fa929138010) at /usr/local/include/ghost/variable.hpp:137
+#3  0x00000000004044d8 in Stock::required_cost (this=0x127caa0) at src/ctr_stock.cpp:37
+#4  0x000000000040e2b5 in ghost::Constraint<Unit>::cost (this=0x127caa0) at /usr/local/include/ghost/constraint.hpp:102
+#5  0x000000000040e86e in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffee1e4d180, variable=0x7fa92914bd10, value=272, costConstraints=..., currentSatCost=25546) at /usr/local/include/ghost/solver.hpp:586
+#6  0x000000000040d2e3 in ghost::Solver<Unit, Stock>::local_move (this=0x7ffee1e4d180, variable=0x7fa92914bd10, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffee1e4a768: 25546) at /usr/local/include/ghost/solver.hpp:638
+#7  0x000000000040ac40 in ghost::Solver<Unit, Stock>::solve (this=0x7ffee1e4d180, finalCost=@0x7ffee1e4d178: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#8  0x000000000040950a in main (argc=1, argv=0x7ffee1e4fbd8) at src/resource_problem.cpp:34
+A debugging session is active.
+
+	Inferior 1 [process 5295] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x0000000000412156 in std::_Rb_tree<Unit, std::pair<Unit const, std::vector<Stock, std::allocator<Stock> > >, std::_Select1st<std::pair<Unit const, std::vector<Stock, std::allocator<Stock> > > >, ghost::Solver<Unit, Stock>::VarComp, std::allocator<std::pair<Unit const, std::vector<Stock, std::allocator<Stock> > > > >::_M_lower_bound (this=0x7ffee1e4f8f0, __x=0x1265b20, __y=0x126aae0, __k=...) at /usr/local/include/c++/5.2.0/bits/stl_tree.h:1629
+1629		  __y = __x, __x = _S_left(__x);
+To enable execution of this file add
+	add-auto-load-safe-path /usr/local/lib64/libstdc++.so.6.0.21-gdb.py
+line to your configuration file "/home/flo/.gdbinit".
+To completely disable this security protection add
+	set auto-load safe-path /
+line to your configuration file "/home/flo/.gdbinit".
+For more information about this security protection see the
+"Auto-loading safe path" section in the GDB manual.  E.g., run from the shell:
+	info "(gdb)Auto-loading safe path"
+#0  0x0000000000412156 in std::_Rb_tree<Unit, std::pair<Unit const, std::vector<Stock, std::allocator<Stock> > >, std::_Select1st<std::pair<Unit const, std::vector<Stock, std::allocator<Stock> > > >, ghost::Solver<Unit, Stock>::VarComp, std::allocator<std::pair<Unit const, std::vector<Stock, std::allocator<Stock> > > > >::_M_lower_bound (this=0x7ffee1e4f8f0, __x=0x1265b20, __y=0x126aae0, __k=...) at /usr/local/include/c++/5.2.0/bits/stl_tree.h:1629
+#1  0x0000000000410565 in std::_Rb_tree<Unit, std::pair<Unit const, std::vector<Stock, std::allocator<Stock> > >, std::_Select1st<std::pair<Unit const, std::vector<Stock, std::allocator<Stock> > > >, ghost::Solver<Unit, Stock>::VarComp, std::allocator<std::pair<Unit const, std::vector<Stock, std::allocator<Stock> > > > >::lower_bound (this=0x7ffee1e4f8f0, __k=...) at /usr/local/include/c++/5.2.0/bits/stl_tree.h:1091
+#2  0x000000000040f1ff in std::map<Unit, std::vector<Stock, std::allocator<Stock> >, ghost::Solver<Unit, Stock>::VarComp, std::allocator<std::pair<Unit const, std::vector<Stock, std::allocator<Stock> > > > >::lower_bound (this=0x7ffee1e4f8f0, __x=...) at /usr/local/include/c++/5.2.0/bits/stl_map.h:916
+#3  0x000000000040db22 in std::map<Unit, std::vector<Stock, std::allocator<Stock> >, ghost::Solver<Unit, Stock>::VarComp, std::allocator<std::pair<Unit const, std::vector<Stock, std::allocator<Stock> > > > >::operator[] (this=0x7ffee1e4f8f0, __k=...) at /usr/local/include/c++/5.2.0/bits/stl_map.h:479
+#4  0x000000000040e817 in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffee1e4d180, variable=0x7fa929138010, value=303, costConstraints=..., currentSatCost=25792) at /usr/local/include/ghost/solver.hpp:585
+#5  0x000000000040c98d in ghost::Solver<Unit, Stock>::compute_variables_costs (this=0x7ffee1e4d180, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=25792) at /usr/local/include/ghost/solver.hpp:484
+#6  0x000000000040aaa1 in ghost::Solver<Unit, Stock>::solve (this=0x7ffee1e4d180, finalCost=@0x7ffee1e4d178: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:310
+#7  0x000000000040950a in main (argc=1, argv=0x7ffee1e4fbd8) at src/resource_problem.cpp:34
+A debugging session is active.
+
+	Inferior 1 [process 5295] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >::operator* (this=0x7ffee1e4a380) at /usr/local/include/c++/5.2.0/bits/stl_iterator.h:754
+754	      { return *_M_current; }
+To enable execution of this file add
+	add-auto-load-safe-path /usr/local/lib64/libstdc++.so.6.0.21-gdb.py
+line to your configuration file "/home/flo/.gdbinit".
+To completely disable this security protection add
+	set auto-load safe-path /
+line to your configuration file "/home/flo/.gdbinit".
+For more information about this security protection see the
+"Auto-loading safe path" section in the GDB manual.  E.g., run from the shell:
+	info "(gdb)Auto-loading safe path"
+#0  __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >::operator* (this=0x7ffee1e4a380) at /usr/local/include/c++/5.2.0/bits/stl_iterator.h:754
+#1  0x00007fa928d3c902 in __gnu_cxx::__ops::_Iter_equals_val<int const>::operator()<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > > (this=0x7ffee1e4a3a0, __it=...) at /usr/local/include/c++/5.2.0/bits/predefined_ops.h:194
+#2  0x00007fa928d3c535 in std::__find_if<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__ops::_Iter_equals_val<int const> > (__first=..., __last=..., __pred=...) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:120
+#3  0x00007fa928d3c1d2 in std::__find_if<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__ops::_Iter_equals_val<int const> > (__first=..., __last=..., __pred=...) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:162
+#4  0x00007fa928d3bccd in std::find<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int> (__first=..., __last=..., __val=@0x7ffee1e4a494: 230) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:3791
+#5  0x00007fa928d3b346 in ghost::Domain::index_of (this=0x7fa92914bd60, value=230) at src/domain.cpp:78
+#6  0x0000000000407cf0 in ghost::Variable::set_value (this=0x7fa92914bd10, value=230) at /usr/local/include/ghost/variable.hpp:146
+#7  0x000000000040e7fd in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffee1e4d180, variable=0x7fa92914bd10, value=230, costConstraints=..., currentSatCost=38432) at /usr/local/include/ghost/solver.hpp:584
+#8  0x000000000040d2e3 in ghost::Solver<Unit, Stock>::local_move (this=0x7ffee1e4d180, variable=0x7fa92914bd10, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffee1e4a768: 38432) at /usr/local/include/ghost/solver.hpp:638
+#9  0x000000000040ac40 in ghost::Solver<Unit, Stock>::solve (this=0x7ffee1e4d180, finalCost=@0x7ffee1e4d178: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#10 0x000000000040950a in main (argc=1, argv=0x7ffee1e4fbd8) at src/resource_problem.cpp:34
+A debugging session is active.
+
+	Inferior 1 [process 5295] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+__gnu_cxx::__ops::_Iter_equals_val<int const>::operator()<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > > (this=0x7ffee1e4a2c0, __it=...) at /usr/local/include/c++/5.2.0/bits/predefined_ops.h:193
+193		operator()(_Iterator __it)
+To enable execution of this file add
+	add-auto-load-safe-path /usr/local/lib64/libstdc++.so.6.0.21-gdb.py
+line to your configuration file "/home/flo/.gdbinit".
+To completely disable this security protection add
+	set auto-load safe-path /
+line to your configuration file "/home/flo/.gdbinit".
+For more information about this security protection see the
+"Auto-loading safe path" section in the GDB manual.  E.g., run from the shell:
+	info "(gdb)Auto-loading safe path"
+#0  __gnu_cxx::__ops::_Iter_equals_val<int const>::operator()<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > > (this=0x7ffee1e4a2c0, __it=...) at /usr/local/include/c++/5.2.0/bits/predefined_ops.h:193
+#1  0x00007fa928d3c5b9 in std::__find_if<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__ops::_Iter_equals_val<int const> > (__first=..., __last=..., __pred=...) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:132
+#2  0x00007fa928d3c1d2 in std::__find_if<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__ops::_Iter_equals_val<int const> > (__first=..., __last=..., __pred=...) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:162
+#3  0x00007fa928d3bccd in std::find<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int> (__first=..., __last=..., __val=@0x7ffee1e4a394: 296) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:3791
+#4  0x00007fa928d3b346 in ghost::Domain::index_of (this=0x7fa92913cfa0, value=296) at src/domain.cpp:78
+#5  0x0000000000407cf0 in ghost::Variable::set_value (this=0x7fa92913cf50, value=296) at /usr/local/include/ghost/variable.hpp:146
+#6  0x000000000040e7fd in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffee1e4d180, variable=0x7fa92913cf50, value=296, costConstraints=..., currentSatCost=0) at /usr/local/include/ghost/solver.hpp:584
+#7  0x000000000040c98d in ghost::Solver<Unit, Stock>::compute_variables_costs (this=0x7ffee1e4d180, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=0) at /usr/local/include/ghost/solver.hpp:484
+#8  0x000000000040d4fd in ghost::Solver<Unit, Stock>::local_move (this=0x7ffee1e4d180, variable=0x7fa929146dd0, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffee1e4a768: 0) at /usr/local/include/ghost/solver.hpp:666
+#9  0x000000000040ac40 in ghost::Solver<Unit, Stock>::solve (this=0x7ffee1e4d180, finalCost=@0x7ffee1e4d178: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#10 0x000000000040950a in main (argc=1, argv=0x7ffee1e4fbd8) at src/resource_problem.cpp:34
+A debugging session is active.
+
+	Inferior 1 [process 5295] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+std::vector<int, std::allocator<int> >::emplace_back<int>(int&&) (this=0x7ffdd1fa6e30) at /usr/local/include/c++/5.2.0/bits/vector.tcc:98
+98		    ++this->_M_impl._M_finish;
+To enable execution of this file add
+	add-auto-load-safe-path /usr/local/lib64/libstdc++.so.6.0.21-gdb.py
+line to your configuration file "/home/flo/.gdbinit".
+To completely disable this security protection add
+	set auto-load safe-path /
+line to your configuration file "/home/flo/.gdbinit".
+For more information about this security protection see the
+"Auto-loading safe path" section in the GDB manual.  E.g., run from the shell:
+	info "(gdb)Auto-loading safe path"
+#0  std::vector<int, std::allocator<int> >::emplace_back<int>(int&&) (this=0x7ffdd1fa6e30) at /usr/local/include/c++/5.2.0/bits/vector.tcc:98
+#1  0x00007fb5b18ef528 in std::vector<int, std::allocator<int> >::push_back(int&&) (this=0x7ffdd1fa6e30, __x=<unknown type in /usr/local/lib/libghost.so, CU 0xa5d2, DIE 0x12911>) at /usr/local/include/c++/5.2.0/bits/stl_vector.h:932
+#2  0x00007fb5b18ef15f in ghost::Variable::possible_values (this=0x7fb5b1cfdd10) at src/variable.cpp:89
+#3  0x000000000040c90c in ghost::Solver<Unit, Stock>::compute_variables_costs (this=0x7ffdd1fa9b00, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=10526) at /usr/local/include/ghost/solver.hpp:479
+#4  0x000000000040d4fd in ghost::Solver<Unit, Stock>::local_move (this=0x7ffdd1fa9b00, variable=0x7fb5b1cf3e90, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffdd1fa70e8: 10526) at /usr/local/include/ghost/solver.hpp:666
+#5  0x000000000040ac40 in ghost::Solver<Unit, Stock>::solve (this=0x7ffdd1fa9b00, finalCost=@0x7ffdd1fa9af8: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#6  0x000000000040950a in main (argc=1, argv=0x7ffdd1fac558) at src/resource_problem.cpp:34
+A debugging session is active.
+
+	Inferior 1 [process 5390] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x00007fb5b18ee530 in std::__find_if<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__ops::_Iter_equals_val<int const> > (__first=..., __last=..., __pred=...) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:120
+120		  if (__pred(__first))
+To enable execution of this file add
+	add-auto-load-safe-path /usr/local/lib64/libstdc++.so.6.0.21-gdb.py
+line to your configuration file "/home/flo/.gdbinit".
+To completely disable this security protection add
+	set auto-load safe-path /
+line to your configuration file "/home/flo/.gdbinit".
+For more information about this security protection see the
+"Auto-loading safe path" section in the GDB manual.  E.g., run from the shell:
+	info "(gdb)Auto-loading safe path"
+#0  0x00007fb5b18ee530 in std::__find_if<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__ops::_Iter_equals_val<int const> > (__first=..., __last=..., __pred=...) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:120
+#1  0x00007fb5b18ee1d2 in std::__find_if<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__ops::_Iter_equals_val<int const> > (__first=..., __last=..., __pred=...) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:162
+#2  0x00007fb5b18edccd in std::find<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int> (__first=..., __last=..., __val=@0x7ffdd1fa6e24: 120) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:3791
+#3  0x00007fb5b18ed346 in ghost::Domain::index_of (this=0x7fb5b1cf8e20, value=120) at src/domain.cpp:78
+#4  0x0000000000407cf0 in ghost::Variable::set_value (this=0x7fb5b1cf8dd0, value=120) at /usr/local/include/ghost/variable.hpp:146
+#5  0x000000000040e7fd in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffdd1fa9b00, variable=0x7fb5b1cf8dd0, value=120, costConstraints=..., currentSatCost=6242) at /usr/local/include/ghost/solver.hpp:584
+#6  0x000000000040c98d in ghost::Solver<Unit, Stock>::compute_variables_costs (this=0x7ffdd1fa9b00, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=6242) at /usr/local/include/ghost/solver.hpp:484
+#7  0x000000000040aaa1 in ghost::Solver<Unit, Stock>::solve (this=0x7ffdd1fa9b00, finalCost=@0x7ffdd1fa9af8: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:310
+#8  0x000000000040950a in main (argc=1, argv=0x7ffdd1fac558) at src/resource_problem.cpp:34
+A debugging session is active.
+
+	Inferior 1 [process 5390] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x00007fb5b18ec610 in operator new(unsigned long, void*)@plt () from /usr/local/lib/libghost.so
+To enable execution of this file add
+	add-auto-load-safe-path /usr/local/lib64/libstdc++.so.6.0.21-gdb.py
+line to your configuration file "/home/flo/.gdbinit".
+To completely disable this security protection add
+	set auto-load safe-path /
+line to your configuration file "/home/flo/.gdbinit".
+For more information about this security protection see the
+"Auto-loading safe path" section in the GDB manual.  E.g., run from the shell:
+	info "(gdb)Auto-loading safe path"
+#0  0x00007fb5b18ec610 in operator new(unsigned long, void*)@plt () from /usr/local/lib/libghost.so
+#1  0x00007fb5b18efe0a in __gnu_cxx::new_allocator<int>::construct<int, int>(int*, int&&) (this=0x7ffdd1fa6f40, __p=0x1e904ec) at /usr/local/include/c++/5.2.0/ext/new_allocator.h:120
+#2  0x00007fb5b18efc64 in std::allocator_traits<std::allocator<int> >::_S_construct<int, int>(std::allocator<int>&, int*, int&&) (__a=..., __p=0x1e904ec) at /usr/local/include/c++/5.2.0/bits/alloc_traits.h:256
+#3  0x00007fb5b18ef882 in std::allocator_traits<std::allocator<int> >::construct<int, int>(std::allocator<int>&, int*, int&&) (__a=..., __p=0x1e904ec) at /usr/local/include/c++/5.2.0/bits/alloc_traits.h:402
+#4  0x00007fb5b18ef721 in std::vector<int, std::allocator<int> >::emplace_back<int>(int&&) (this=0x7ffdd1fa6f40) at /usr/local/include/c++/5.2.0/bits/vector.tcc:96
+#5  0x00007fb5b18ef528 in std::vector<int, std::allocator<int> >::push_back(int&&) (this=0x7ffdd1fa6f40, __x=<unknown type in /usr/local/lib/libghost.so, CU 0xa5d2, DIE 0x12911>) at /usr/local/include/c++/5.2.0/bits/stl_vector.h:932
+#6  0x00007fb5b18ef15f in ghost::Variable::possible_values (this=0x7fb5b1cfb570) at src/variable.cpp:89
+#7  0x000000000040c90c in ghost::Solver<Unit, Stock>::compute_variables_costs (this=0x7ffdd1fa9b00, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=26766) at /usr/local/include/ghost/solver.hpp:479
+#8  0x000000000040aaa1 in ghost::Solver<Unit, Stock>::solve (this=0x7ffdd1fa9b00, finalCost=@0x7ffdd1fa9af8: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:310
+#9  0x000000000040950a in main (argc=1, argv=0x7ffdd1fac558) at src/resource_problem.cpp:34
+A debugging session is active.
+
+	Inferior 1 [process 5390] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x000000000040dca9 in std::_Rb_tree<Unit, std::pair<Unit const, std::vector<Stock, std::allocator<Stock> > >, std::_Select1st<std::pair<Unit const, std::vector<Stock, std::allocator<Stock> > > >, ghost::Solver<Unit, Stock>::VarComp, std::allocator<std::pair<Unit const, std::vector<Stock, std::allocator<Stock> > > > >::_S_right (__x=0x1e78b20) at /usr/local/include/c++/5.2.0/bits/stl_tree.h:687
+687	      { return static_cast<_Link_type>(__x->_M_right); }
+To enable execution of this file add
+	add-auto-load-safe-path /usr/local/lib64/libstdc++.so.6.0.21-gdb.py
+line to your configuration file "/home/flo/.gdbinit".
+To completely disable this security protection add
+	set auto-load safe-path /
+line to your configuration file "/home/flo/.gdbinit".
+For more information about this security protection see the
+"Auto-loading safe path" section in the GDB manual.  E.g., run from the shell:
+	info "(gdb)Auto-loading safe path"
+#0  0x000000000040dca9 in std::_Rb_tree<Unit, std::pair<Unit const, std::vector<Stock, std::allocator<Stock> > >, std::_Select1st<std::pair<Unit const, std::vector<Stock, std::allocator<Stock> > > >, ghost::Solver<Unit, Stock>::VarComp, std::allocator<std::pair<Unit const, std::vector<Stock, std::allocator<Stock> > > > >::_S_right (__x=0x1e78b20) at /usr/local/include/c++/5.2.0/bits/stl_tree.h:687
+#1  0x0000000000412178 in std::_Rb_tree<Unit, std::pair<Unit const, std::vector<Stock, std::allocator<Stock> > >, std::_Select1st<std::pair<Unit const, std::vector<Stock, std::allocator<Stock> > > >, ghost::Solver<Unit, Stock>::VarComp, std::allocator<std::pair<Unit const, std::vector<Stock, std::allocator<Stock> > > > >::_M_lower_bound (this=0x7ffdd1fac270, __x=0x1e78b20, __y=0x1e7dae0, __k=...) at /usr/local/include/c++/5.2.0/bits/stl_tree.h:1631
+#2  0x0000000000410565 in std::_Rb_tree<Unit, std::pair<Unit const, std::vector<Stock, std::allocator<Stock> > >, std::_Select1st<std::pair<Unit const, std::vector<Stock, std::allocator<Stock> > > >, ghost::Solver<Unit, Stock>::VarComp, std::allocator<std::pair<Unit const, std::vector<Stock, std::allocator<Stock> > > > >::lower_bound (this=0x7ffdd1fac270, __k=...) at /usr/local/include/c++/5.2.0/bits/stl_tree.h:1091
+#3  0x000000000040f1ff in std::map<Unit, std::vector<Stock, std::allocator<Stock> >, ghost::Solver<Unit, Stock>::VarComp, std::allocator<std::pair<Unit const, std::vector<Stock, std::allocator<Stock> > > > >::lower_bound (this=0x7ffdd1fac270, __x=...) at /usr/local/include/c++/5.2.0/bits/stl_map.h:916
+#4  0x000000000040db22 in std::map<Unit, std::vector<Stock, std::allocator<Stock> >, ghost::Solver<Unit, Stock>::VarComp, std::allocator<std::pair<Unit const, std::vector<Stock, std::allocator<Stock> > > > >::operator[] (this=0x7ffdd1fac270, __k=...) at /usr/local/include/c++/5.2.0/bits/stl_map.h:479
+#5  0x000000000040e817 in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffdd1fa9b00, variable=0x7fb5b1cf16f0, value=372, costConstraints=..., currentSatCost=46431) at /usr/local/include/ghost/solver.hpp:585
+#6  0x000000000040d2e3 in ghost::Solver<Unit, Stock>::local_move (this=0x7ffdd1fa9b00, variable=0x7fb5b1cf16f0, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffdd1fa70e8: 46431) at /usr/local/include/ghost/solver.hpp:638
+#7  0x000000000040ac40 in ghost::Solver<Unit, Stock>::solve (this=0x7ffdd1fa9b00, finalCost=@0x7ffdd1fa9af8: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#8  0x000000000040950a in main (argc=1, argv=0x7ffdd1fac558) at src/resource_problem.cpp:34
+A debugging session is active.
+
+	Inferior 1 [process 5390] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x00007f353da2690d in __gnu_cxx::__ops::_Iter_equals_val<int const>::operator()<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > > (this=0x7ffd422e2040, __it=...) at /usr/local/include/c++/5.2.0/bits/predefined_ops.h:194
+194		{ return *__it == _M_value; }
+To enable execution of this file add
+	add-auto-load-safe-path /usr/local/lib64/libstdc++.so.6.0.21-gdb.py
+line to your configuration file "/home/flo/.gdbinit".
+To completely disable this security protection add
+	set auto-load safe-path /
+line to your configuration file "/home/flo/.gdbinit".
+For more information about this security protection see the
+"Auto-loading safe path" section in the GDB manual.  E.g., run from the shell:
+	info "(gdb)Auto-loading safe path"
+#0  0x00007f353da2690d in __gnu_cxx::__ops::_Iter_equals_val<int const>::operator()<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > > (this=0x7ffd422e2040, __it=...) at /usr/local/include/c++/5.2.0/bits/predefined_ops.h:194
+#1  0x00007f353da265b9 in std::__find_if<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__ops::_Iter_equals_val<int const> > (__first=..., __last=..., __pred=...) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:132
+#2  0x00007f353da261d2 in std::__find_if<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__ops::_Iter_equals_val<int const> > (__first=..., __last=..., __pred=...) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:162
+#3  0x00007f353da25ccd in std::find<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int> (__first=..., __last=..., __val=@0x7ffd422e2134: 271) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:3791
+#4  0x00007f353da25346 in ghost::Domain::index_of (this=0x7f353de35d60, value=271) at src/domain.cpp:78
+#5  0x0000000000407cf0 in ghost::Variable::set_value (this=0x7f353de35d10, value=271) at /usr/local/include/ghost/variable.hpp:146
+#6  0x000000000040e7fd in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffd422e4e20, variable=0x7f353de35d10, value=271, costConstraints=..., currentSatCost=62414) at /usr/local/include/ghost/solver.hpp:584
+#7  0x000000000040d2e3 in ghost::Solver<Unit, Stock>::local_move (this=0x7ffd422e4e20, variable=0x7f353de35d10, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffd422e2408: 62414) at /usr/local/include/ghost/solver.hpp:638
+#8  0x000000000040ac40 in ghost::Solver<Unit, Stock>::solve (this=0x7ffd422e4e20, finalCost=@0x7ffd422e4e18: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#9  0x000000000040950a in main (argc=1, argv=0x7ffd422e7878) at src/resource_problem.cpp:34
+A debugging session is active.
+
+	Inferior 1 [process 5553] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x00007f353da26904 in __gnu_cxx::__ops::_Iter_equals_val<int const>::operator()<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > > (this=0x7ffd422e1f40, __it=...) at /usr/local/include/c++/5.2.0/bits/predefined_ops.h:194
+194		{ return *__it == _M_value; }
+To enable execution of this file add
+	add-auto-load-safe-path /usr/local/lib64/libstdc++.so.6.0.21-gdb.py
+line to your configuration file "/home/flo/.gdbinit".
+To completely disable this security protection add
+	set auto-load safe-path /
+line to your configuration file "/home/flo/.gdbinit".
+For more information about this security protection see the
+"Auto-loading safe path" section in the GDB manual.  E.g., run from the shell:
+	info "(gdb)Auto-loading safe path"
+#0  0x00007f353da26904 in __gnu_cxx::__ops::_Iter_equals_val<int const>::operator()<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > > (this=0x7ffd422e1f40, __it=...) at /usr/local/include/c++/5.2.0/bits/predefined_ops.h:194
+#1  0x00007f353da26561 in std::__find_if<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__ops::_Iter_equals_val<int const> > (__first=..., __last=..., __pred=...) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:124
+#2  0x00007f353da261d2 in std::__find_if<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__ops::_Iter_equals_val<int const> > (__first=..., __last=..., __pred=...) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:162
+#3  0x00007f353da25ccd in std::find<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int> (__first=..., __last=..., __val=@0x7ffd422e2034: 118) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:3791
+#4  0x00007f353da25346 in ghost::Domain::index_of (this=0x7f353de35d60, value=118) at src/domain.cpp:78
+#5  0x0000000000407cf0 in ghost::Variable::set_value (this=0x7f353de35d10, value=118) at /usr/local/include/ghost/variable.hpp:146
+#6  0x000000000040e7fd in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffd422e4e20, variable=0x7f353de35d10, value=118, costConstraints=..., currentSatCost=16548) at /usr/local/include/ghost/solver.hpp:584
+#7  0x000000000040c98d in ghost::Solver<Unit, Stock>::compute_variables_costs (this=0x7ffd422e4e20, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=16548) at /usr/local/include/ghost/solver.hpp:484
+#8  0x000000000040d4fd in ghost::Solver<Unit, Stock>::local_move (this=0x7ffd422e4e20, variable=0x7f353de30dd0, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffd422e2408: 16548) at /usr/local/include/ghost/solver.hpp:666
+#9  0x000000000040ac40 in ghost::Solver<Unit, Stock>::solve (this=0x7ffd422e4e20, finalCost=@0x7ffd422e4e18: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#10 0x000000000040950a in main (argc=1, argv=0x7ffd422e7878) at src/resource_problem.cpp:34
+A debugging session is active.
+
+	Inferior 1 [process 5553] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >::operator++ (this=0x7ffd422e1f40) at /usr/local/include/c++/5.2.0/bits/stl_iterator.h:761
+761	      operator++() _GLIBCXX_NOEXCEPT
+To enable execution of this file add
+	add-auto-load-safe-path /usr/local/lib64/libstdc++.so.6.0.21-gdb.py
+line to your configuration file "/home/flo/.gdbinit".
+To completely disable this security protection add
+	set auto-load safe-path /
+line to your configuration file "/home/flo/.gdbinit".
+For more information about this security protection see the
+"Auto-loading safe path" section in the GDB manual.  E.g., run from the shell:
+	info "(gdb)Auto-loading safe path"
+#0  __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >::operator++ (this=0x7ffd422e1f40) at /usr/local/include/c++/5.2.0/bits/stl_iterator.h:761
+#1  0x00007f353da2657a in std::__find_if<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__ops::_Iter_equals_val<int const> > (__first=..., __last=..., __pred=...) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:126
+#2  0x00007f353da261d2 in std::__find_if<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__ops::_Iter_equals_val<int const> > (__first=..., __last=..., __pred=...) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:162
+#3  0x00007f353da25ccd in std::find<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int> (__first=..., __last=..., __val=@0x7ffd422e2034: 189) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:3791
+#4  0x00007f353da25346 in ghost::Domain::index_of (this=0x7f353de30e20, value=189) at src/domain.cpp:78
+#5  0x0000000000407cf0 in ghost::Variable::set_value (this=0x7f353de30dd0, value=189) at /usr/local/include/ghost/variable.hpp:146
+#6  0x000000000040e7fd in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffd422e4e20, variable=0x7f353de30dd0, value=189, costConstraints=..., currentSatCost=3874) at /usr/local/include/ghost/solver.hpp:584
+#7  0x000000000040c98d in ghost::Solver<Unit, Stock>::compute_variables_costs (this=0x7ffd422e4e20, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=3874) at /usr/local/include/ghost/solver.hpp:484
+#8  0x000000000040d4fd in ghost::Solver<Unit, Stock>::local_move (this=0x7ffd422e4e20, variable=0x7f353de2be90, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffd422e2408: 3874) at /usr/local/include/ghost/solver.hpp:666
+#9  0x000000000040ac40 in ghost::Solver<Unit, Stock>::solve (this=0x7ffd422e4e20, finalCost=@0x7ffd422e4e18: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#10 0x000000000040950a in main (argc=1, argv=0x7ffd422e7878) at src/resource_problem.cpp:34
+A debugging session is active.
+
+	Inferior 1 [process 5553] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x00007f353da27e11 in __gnu_cxx::new_allocator<int>::construct<int, int>(int*, int&&) (this=0x7ffd422e2150, __p=0xe5df30) at /usr/local/include/c++/5.2.0/ext/new_allocator.h:120
+120		{ ::new((void *)__p) _Up(std::forward<_Args>(__args)...); }
+To enable execution of this file add
+	add-auto-load-safe-path /usr/local/lib64/libstdc++.so.6.0.21-gdb.py
+line to your configuration file "/home/flo/.gdbinit".
+To completely disable this security protection add
+	set auto-load safe-path /
+line to your configuration file "/home/flo/.gdbinit".
+For more information about this security protection see the
+"Auto-loading safe path" section in the GDB manual.  E.g., run from the shell:
+	info "(gdb)Auto-loading safe path"
+#0  0x00007f353da27e11 in __gnu_cxx::new_allocator<int>::construct<int, int>(int*, int&&) (this=0x7ffd422e2150, __p=0xe5df30) at /usr/local/include/c++/5.2.0/ext/new_allocator.h:120
+#1  0x00007f353da27c64 in std::allocator_traits<std::allocator<int> >::_S_construct<int, int>(std::allocator<int>&, int*, int&&) (__a=..., __p=0xe5df30) at /usr/local/include/c++/5.2.0/bits/alloc_traits.h:256
+#2  0x00007f353da27882 in std::allocator_traits<std::allocator<int> >::construct<int, int>(std::allocator<int>&, int*, int&&) (__a=..., __p=0xe5df30) at /usr/local/include/c++/5.2.0/bits/alloc_traits.h:402
+#3  0x00007f353da2790f in std::vector<int, std::allocator<int> >::_M_emplace_back_aux<int>(int&&) (this=0x7ffd422e2150) at /usr/local/include/c++/5.2.0/bits/vector.tcc:416
+#4  0x00007f353da27755 in std::vector<int, std::allocator<int> >::emplace_back<int>(int&&) (this=0x7ffd422e2150) at /usr/local/include/c++/5.2.0/bits/vector.tcc:101
+#5  0x00007f353da27528 in std::vector<int, std::allocator<int> >::push_back(int&&) (this=0x7ffd422e2150, __x=<unknown type in /usr/local/lib/libghost.so, CU 0xa5d2, DIE 0x12911>) at /usr/local/include/c++/5.2.0/bits/stl_vector.h:932
+#6  0x00007f353da2715f in ghost::Variable::possible_values (this=0x7f353de22010) at src/variable.cpp:89
+#7  0x000000000040c90c in ghost::Solver<Unit, Stock>::compute_variables_costs (this=0x7ffd422e4e20, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=13744) at /usr/local/include/ghost/solver.hpp:479
+#8  0x000000000040d4fd in ghost::Solver<Unit, Stock>::local_move (this=0x7ffd422e4e20, variable=0x7f353de35d10, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffd422e2408: 13744) at /usr/local/include/ghost/solver.hpp:666
+#9  0x000000000040ac40 in ghost::Solver<Unit, Stock>::solve (this=0x7ffd422e4e20, finalCost=@0x7ffd422e4e18: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#10 0x000000000040950a in main (argc=1, argv=0x7ffd422e7878) at src/resource_problem.cpp:34
+A debugging session is active.
+
+	Inferior 1 [process 5553] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x00007f7be1490df9 in __gnu_cxx::new_allocator<int>::construct<int, int>(int*, int&&) (this=0x7ffccb7a5200, __p=0xf09a58) at /usr/local/include/c++/5.2.0/ext/new_allocator.h:120
+120		{ ::new((void *)__p) _Up(std::forward<_Args>(__args)...); }
+To enable execution of this file add
+	add-auto-load-safe-path /usr/local/lib64/libstdc++.so.6.0.21-gdb.py
+line to your configuration file "/home/flo/.gdbinit".
+To completely disable this security protection add
+	set auto-load safe-path /
+line to your configuration file "/home/flo/.gdbinit".
+For more information about this security protection see the
+"Auto-loading safe path" section in the GDB manual.  E.g., run from the shell:
+	info "(gdb)Auto-loading safe path"
+#0  0x00007f7be1490df9 in __gnu_cxx::new_allocator<int>::construct<int, int>(int*, int&&) (this=0x7ffccb7a5200, __p=0xf09a58) at /usr/local/include/c++/5.2.0/ext/new_allocator.h:120
+#1  0x00007f7be1490c64 in std::allocator_traits<std::allocator<int> >::_S_construct<int, int>(std::allocator<int>&, int*, int&&) (__a=..., __p=0xf09a58) at /usr/local/include/c++/5.2.0/bits/alloc_traits.h:256
+#2  0x00007f7be1490882 in std::allocator_traits<std::allocator<int> >::construct<int, int>(std::allocator<int>&, int*, int&&) (__a=..., __p=0xf09a58) at /usr/local/include/c++/5.2.0/bits/alloc_traits.h:402
+#3  0x00007f7be1490721 in std::vector<int, std::allocator<int> >::emplace_back<int>(int&&) (this=0x7ffccb7a5200) at /usr/local/include/c++/5.2.0/bits/vector.tcc:96
+#4  0x00007f7be1490528 in std::vector<int, std::allocator<int> >::push_back(int&&) (this=0x7ffccb7a5200, __x=<unknown type in /usr/local/lib/libghost.so, CU 0xa5d2, DIE 0x12911>) at /usr/local/include/c++/5.2.0/bits/stl_vector.h:932
+#5  0x00007f7be149015f in ghost::Variable::possible_values (this=0x7f7be1899dd0) at src/variable.cpp:89
+#6  0x000000000040c90c in ghost::Solver<Unit, Stock>::compute_variables_costs (this=0x7ffccb7a7ed0, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=11750) at /usr/local/include/ghost/solver.hpp:479
+#7  0x000000000040d4fd in ghost::Solver<Unit, Stock>::local_move (this=0x7ffccb7a7ed0, variable=0x7f7be1899dd0, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffccb7a54b8: 11750) at /usr/local/include/ghost/solver.hpp:666
+#8  0x000000000040ac40 in ghost::Solver<Unit, Stock>::solve (this=0x7ffccb7a7ed0, finalCost=@0x7ffccb7a7ec8: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#9  0x000000000040950a in main (argc=1, argv=0x7ffccb7aa928) at src/resource_problem.cpp:34
+A debugging session is active.
+
+	Inferior 1 [process 5721] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x00007f7be148e2bd in ghost::Domain::get_value (this=0x7f7be1894ee0, index=0) at src/domain.cpp:71
+71	    return _domain[ index ];
+To enable execution of this file add
+	add-auto-load-safe-path /usr/local/lib64/libstdc++.so.6.0.21-gdb.py
+line to your configuration file "/home/flo/.gdbinit".
+To completely disable this security protection add
+	set auto-load safe-path /
+line to your configuration file "/home/flo/.gdbinit".
+For more information about this security protection see the
+"Auto-loading safe path" section in the GDB manual.  E.g., run from the shell:
+	info "(gdb)Auto-loading safe path"
+#0  0x00007f7be148e2bd in ghost::Domain::get_value (this=0x7f7be1894ee0, index=0) at src/domain.cpp:71
+#1  0x00000000004045c2 in ghost::Variable::get_value (this=0x7f7be1894e90) at /usr/local/include/ghost/variable.hpp:137
+#2  0x00000000004044d8 in Stock::required_cost (this=0xee5f50) at src/ctr_stock.cpp:37
+#3  0x000000000040e2b5 in ghost::Constraint<Unit>::cost (this=0xee5f50) at /usr/local/include/ghost/constraint.hpp:102
+#4  0x000000000040e86e in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffccb7a7ed0, variable=0x7f7be188b010, value=223, costConstraints=..., currentSatCost=7772) at /usr/local/include/ghost/solver.hpp:586
+#5  0x000000000040d2e3 in ghost::Solver<Unit, Stock>::local_move (this=0x7ffccb7a7ed0, variable=0x7f7be188b010, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffccb7a54b8: 7772) at /usr/local/include/ghost/solver.hpp:638
+#6  0x000000000040ac40 in ghost::Solver<Unit, Stock>::solve (this=0x7ffccb7a7ed0, finalCost=@0x7ffccb7a7ec8: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#7  0x000000000040950a in main (argc=1, argv=0x7ffccb7aa928) at src/resource_problem.cpp:34
+A debugging session is active.
+
+	Inferior 1 [process 5721] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >::operator++ (this=0x7ffccb7a5110) at /usr/local/include/c++/5.2.0/bits/stl_iterator.h:763
+763		++_M_current;
+To enable execution of this file add
+	add-auto-load-safe-path /usr/local/lib64/libstdc++.so.6.0.21-gdb.py
+line to your configuration file "/home/flo/.gdbinit".
+To completely disable this security protection add
+	set auto-load safe-path /
+line to your configuration file "/home/flo/.gdbinit".
+For more information about this security protection see the
+"Auto-loading safe path" section in the GDB manual.  E.g., run from the shell:
+	info "(gdb)Auto-loading safe path"
+#0  __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >::operator++ (this=0x7ffccb7a5110) at /usr/local/include/c++/5.2.0/bits/stl_iterator.h:763
+#1  0x00007f7be148f5a6 in std::__find_if<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__ops::_Iter_equals_val<int const> > (__first=..., __last=..., __pred=...) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:130
+#2  0x00007f7be148f1d2 in std::__find_if<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__ops::_Iter_equals_val<int const> > (__first=..., __last=..., __pred=...) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:162
+#3  0x00007f7be148eccd in std::find<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int> (__first=..., __last=..., __val=@0x7ffccb7a51e4: 243) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:3791
+#4  0x00007f7be148e346 in ghost::Domain::index_of (this=0x7f7be1897680, value=243) at src/domain.cpp:78
+#5  0x0000000000407cf0 in ghost::Variable::set_value (this=0x7f7be1897630, value=243) at /usr/local/include/ghost/variable.hpp:146
+#6  0x000000000040e7fd in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffccb7a7ed0, variable=0x7f7be1897630, value=243, costConstraints=..., currentSatCost=131312) at /usr/local/include/ghost/solver.hpp:584
+#7  0x000000000040d2e3 in ghost::Solver<Unit, Stock>::local_move (this=0x7ffccb7a7ed0, variable=0x7f7be1897630, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffccb7a54b8: 131312) at /usr/local/include/ghost/solver.hpp:638
+#8  0x000000000040ac40 in ghost::Solver<Unit, Stock>::solve (this=0x7ffccb7a7ed0, finalCost=@0x7ffccb7a7ec8: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#9  0x000000000040950a in main (argc=1, argv=0x7ffccb7aa928) at src/resource_problem.cpp:34
+A debugging session is active.
+
+	Inferior 1 [process 5721] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >::operator++ (this=0x7ffccb7a5110) at /usr/local/include/c++/5.2.0/bits/stl_iterator.h:764
+764		return *this;
+To enable execution of this file add
+	add-auto-load-safe-path /usr/local/lib64/libstdc++.so.6.0.21-gdb.py
+line to your configuration file "/home/flo/.gdbinit".
+To completely disable this security protection add
+	set auto-load safe-path /
+line to your configuration file "/home/flo/.gdbinit".
+For more information about this security protection see the
+"Auto-loading safe path" section in the GDB manual.  E.g., run from the shell:
+	info "(gdb)Auto-loading safe path"
+#0  __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >::operator++ (this=0x7ffccb7a5110) at /usr/local/include/c++/5.2.0/bits/stl_iterator.h:764
+#1  0x00007f7be148f57a in std::__find_if<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__ops::_Iter_equals_val<int const> > (__first=..., __last=..., __pred=...) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:126
+#2  0x00007f7be148f1d2 in std::__find_if<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__ops::_Iter_equals_val<int const> > (__first=..., __last=..., __pred=...) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:162
+#3  0x00007f7be148eccd in std::find<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int> (__first=..., __last=..., __val=@0x7ffccb7a51e4: 268) at /usr/local/include/c++/5.2.0/bits/stl_algo.h:3791
+#4  0x00007f7be148e346 in ghost::Domain::index_of (this=0x7f7be189ed60, value=268) at src/domain.cpp:78
+#5  0x0000000000407cf0 in ghost::Variable::set_value (this=0x7f7be189ed10, value=268) at /usr/local/include/ghost/variable.hpp:146
+#6  0x000000000040e7fd in ghost::Solver<Unit, Stock>::simulate_local_move_cost (this=0x7ffccb7a7ed0, variable=0x7f7be189ed10, value=268, costConstraints=..., currentSatCost=145751) at /usr/local/include/ghost/solver.hpp:584
+#7  0x000000000040d2e3 in ghost::Solver<Unit, Stock>::local_move (this=0x7ffccb7a7ed0, variable=0x7f7be189ed10, costConstraints=..., costVariables=..., costNonTabuVariables=..., currentSatCost=@0x7ffccb7a54b8: 145751) at /usr/local/include/ghost/solver.hpp:638
+#8  0x000000000040ac40 in ghost::Solver<Unit, Stock>::solve (this=0x7ffccb7a7ed0, finalCost=@0x7ffccb7a7ec8: 0, finalSolution=..., satTimeout=1000000, optTimeout=15000000) at /usr/local/include/ghost/solver.hpp:329
+#9  0x000000000040950a in main (argc=1, argv=0x7ffccb7aa928) at src/resource_problem.cpp:34
+A debugging session is active.
+
+	Inferior 1 [process 5721] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]

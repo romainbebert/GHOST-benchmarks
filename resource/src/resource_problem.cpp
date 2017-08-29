@@ -31,6 +31,7 @@ int main(int argc, char **argv)
   double cost = 0.;
   vector<int> solution( variables.size(), -1 );
   
+  // bool found = solver.solve( cost, solution, 1000, 15000 );
   bool found = solver.solve( cost, solution, 20, 130 );
   // bool found = solver.solve( cost, solution, 100, 1500 );
 
