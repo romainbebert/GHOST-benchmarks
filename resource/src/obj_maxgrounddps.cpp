@@ -14,7 +14,7 @@ double MaxGroundDPS::required_cost( vector< Unit > *vecVariables ) const
   double total = 0.;
   
   for( auto& v : *vecVariables )
-    total += v.get_value() * v.get_dps();
+    total += ( v.get_value() * v.get_dps() );
   
   return -total;
 

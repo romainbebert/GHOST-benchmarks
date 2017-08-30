@@ -25,5 +25,5 @@ public:
   inline int	get_mineral()	const { return _mineral; }
   inline int	get_gas()	const { return _gas; }
   inline double get_supply()	const { return _supply; }
-  inline int	get_dps()	const { return _dps; }
+  inline double	get_dps()	const { return _dps; }
 };

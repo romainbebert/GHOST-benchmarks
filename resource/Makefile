@@ -11,7 +11,7 @@ BINDIR=bin
 
 # Compiler flags
 CXXFIRSTFLAGS= -Ofast -W -Wall -Wextra -pedantic -Wno-sign-compare -Wno-unused-parameter
-CXXFIRSTFLAGSDEBUG= -g -O0 -W -Wall -Wextra -pedantic -Wno-sign-compare -Wno-unused-parameter 
+CXXFIRSTFLAGSDEBUG= -g -O0 -DBENCH -W -Wall -Wextra -pedantic -Wno-sign-compare -Wno-unused-parameter 
 
 # Linker flags
 LDFLAGS=-pthread -lghost

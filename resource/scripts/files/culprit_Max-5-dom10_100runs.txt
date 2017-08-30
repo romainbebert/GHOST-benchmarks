@@ -1,12 +1,35 @@
 *** Terran ***
 Success rate: 100%
-Mean score: 5574.26
+Mean score: 5662.29
+Marine:0
+Firebat:296
+Ghost:0
+Vulture:42
+SiegeTankTankMode:0
+SiegeTankSiegeMode:0
+Goliath:0
+Wraith:0
+BattleCruiser:0
+
 
 *** Protoss ***
 Success rate: 100%
-Mean score: 4779.97
+Mean score: 4779.53
+Zealot:1
+Dragoon:2
+DarkTemplar:3
+Reaver:4
+Scout:5
+
 
 *** Zerg ***
 Success rate: 100%
-Mean score: 7612.01
+Mean score: 7565.8
+Zergling:0
+Hydralisk:0
+Lurker:0
+Ultralisk:0
+Mutalisk:0
+Guardian:0
+
 

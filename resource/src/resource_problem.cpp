@@ -101,7 +101,7 @@ int main(int argc, char **argv)
   int count = 0;
   double total = 0.;
   
-  for(int i = 0 ; i < 100 ; ++i )
+  for(int i = 0 ; i < 1 ; ++i )
     if( solver_t.solve( cost_t, solution_t, 20, 130 ) )
     {
       ++count;
@@ -112,18 +112,18 @@ int main(int argc, char **argv)
   
   cout << "*** Terran ***\n"
        << "Success rate: " << count << "%\n"
-       << "Mean score: " << total/count << "\n\n";
-    //<< "Memory usage: " << rss << "/" << vm << "\n\n";
+       << "Mean score: " << total/count << "\n";
+  //<< "Memory usage: " << rss << "/" << vm << "\n\n";
   
-  // if( found_t )
-  // {
-  //   cout << "Cost: " << cost_t << "\n*********\n";
-  //   for( auto& v : variables_t )
-  //     cout << v.get_name() << ":" << solution_t[ v.get_id() ] << "\n";
-  // }
-  // else
-  //   cout << "No solutions found\n";
-
+  cout << "var-------\n";
+  for( auto& v : variables_t )
+    cout << v.get_name() << ":" << v.get_value() << "\n";
+  cout << "sol-------\n";
+  for( auto& v : variables_t )
+    cout << v.get_name() << ":" << solution_t[ v.get_id() ] << "\n";
+  
+  cout << "\n\n";
+    
   /////////////
   // Protoss //
   /////////////
@@ -153,7 +153,7 @@ int main(int argc, char **argv)
   count = 0;
   total = 0.;
   
-  for(int i = 0 ; i < 100 ; ++i )
+  for(int i = 0 ; i < 1 ; ++i )
     if( solver_p.solve( cost_p, solution_p, 20, 130 ) )
     {
       ++count;
@@ -164,17 +164,17 @@ int main(int argc, char **argv)
   
   cout << "*** Protoss ***\n"
        << "Success rate: " << count << "%\n"
-       << "Mean score: " << total/count << "\n\n";
+       << "Mean score: " << total/count << "\n";
     //<< "Memory usage: " << rss << "/" << vm << "\n\n";
 
-  // if( found_p )
-  // {
-  //   cout << "Cost: " << cost_p << "\n*********\n";
-  //   for( auto& v : variables_p )
-  //     cout << v.get_name() << ":" << solution_p[ v.get_id() ] << "\n";
-  // }
-  // else
-  //   cout << "No solutions found\n";
+  cout << "var-------\n";
+  for( auto& v : variables_p )
+    cout << v.get_name() << ":" << v.get_value() << "\n";
+  cout << "sol-------\n";
+  for( auto& v : variables_p )
+      cout << v.get_name() << ":" << solution_p[ v.get_id() ] << "\n";
+
+  cout << "\n\n";
 
   //////////
   // Zerg //
@@ -205,7 +205,7 @@ int main(int argc, char **argv)
   count = 0;
   total = 0.;
   
-  for(int i = 0 ; i < 100 ; ++i )
+  for(int i = 0 ; i < 1 ; ++i )
     if( solver_z.solve( cost_z, solution_z, 20, 130 ) )
     {
       ++count;
@@ -216,16 +216,16 @@ int main(int argc, char **argv)
 
   cout << "*** Zerg ***\n"
        << "Success rate: " << count << "%\n"
-       << "Mean score: " << total/count << "\n\n";
+       << "Mean score: " << total/count << "\n";
     //<< "Memory usage: " << rss << "/" << vm << "\n\n";
 
-  // if( found_z )
-  // {
-  //   cout << "Cost: " << cost_z << "\n*********\n";
-  //   for( auto& v : variables_z )
-  //     cout << v.get_name() << ":" << solution_z[ v.get_id() ] << "\n";
-  // }
-  // else
-  //   cout << "No solutions found\n";
+  cout << "var-------\n";
+  for( auto& v : variables_z )
+    cout << v.get_name() << ":" << v.get_value() << "\n";
+  cout << "sol-------\n";
+  for( auto& v : variables_z )
+    cout << v.get_name() << ":" << solution_z[ v.get_id() ] << "\n";
+
+  cout << "\n\n";
 }
 
