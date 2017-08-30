@@ -1,8 +1,9 @@
-# Directories
+EXEC=resource
 
 #CXX=clang++
 CXX=g++
-EXEC=resource
+
+# Directories
 SRCDIR=src
 OBJDIR=obj
 BINDIR=bin
