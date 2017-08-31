@@ -15,7 +15,7 @@ Stock::Stock( vector< Unit > *variables, int quantity, ResourceType type )
 double Stock::required_cost() const 
 {
   double sum = 0.;
-  int costValue;
+  double costValue;
 
   for( auto& v : *variables )
   {

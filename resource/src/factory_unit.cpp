@@ -42,7 +42,7 @@ Unit make_unit( const UnitType& type, int supplyAvailable )
 
     // Zerg
   case UnitType::Zergling:
-    return Unit( "Zergling", "z_z", supplyAvailable, 25, 0, 0.5, (5.0/8)*24 );
+    return Unit( "Zergling", "z_z", supplyAvailable, 25, 0, 0.5, 15.0 );
   case UnitType::Hydralisk:
     return Unit( "Hydralisk", "z_h", supplyAvailable, 75, 25, 1., (10.0/15)*24 );
   case UnitType::Lurker:
@@ -62,11 +62,11 @@ Unit make_unit( const UnitType& type, int supplyAvailable )
 vector< Unit > make_protoss( int supplyAvailable )
 {
   vector< Unit > units;
-  units.push_back( make_unit( UnitType::Zealot, supplyAvailable ) );
-  units.push_back( make_unit( UnitType::Dragoon, supplyAvailable ) );
-  units.push_back( make_unit( UnitType::DarkTemplar, supplyAvailable ) );
-  units.push_back( make_unit( UnitType::Reaver, supplyAvailable ) );
-  units.push_back( make_unit( UnitType::Scout, supplyAvailable ) );
+  units.push_back( make_unit( UnitType::Zealot, supplyAvailable / 2 ) );
+  units.push_back( make_unit( UnitType::Dragoon, supplyAvailable / 2 ) );
+  units.push_back( make_unit( UnitType::DarkTemplar, supplyAvailable / 2 ) );
+  units.push_back( make_unit( UnitType::Reaver, supplyAvailable / 4 ) );
+  units.push_back( make_unit( UnitType::Scout, supplyAvailable / 3 ) );
   return units;
 }
 
@@ -76,23 +76,23 @@ vector< Unit > make_terran( int supplyAvailable )
   units.push_back( make_unit( UnitType::Marine, supplyAvailable ) );
   units.push_back( make_unit( UnitType::Firebat, supplyAvailable ) );
   units.push_back( make_unit( UnitType::Ghost, supplyAvailable ) );
-  units.push_back( make_unit( UnitType::Vulture, supplyAvailable ) );
-  units.push_back( make_unit( UnitType::SiegeTankTankMode, supplyAvailable ) );
-  units.push_back( make_unit( UnitType::SiegeTankSiegeMode, supplyAvailable ) );
-  units.push_back( make_unit( UnitType::Goliath, supplyAvailable ) );
-  units.push_back( make_unit( UnitType::Wraith, supplyAvailable ) );
-  units.push_back( make_unit( UnitType::BattleCruiser, supplyAvailable ) );
+  units.push_back( make_unit( UnitType::Vulture, supplyAvailable / 2 ) );
+  units.push_back( make_unit( UnitType::SiegeTankTankMode, supplyAvailable / 2 ) );
+  units.push_back( make_unit( UnitType::SiegeTankSiegeMode, supplyAvailable / 2 ) );
+  units.push_back( make_unit( UnitType::Goliath, supplyAvailable / 2 ) );
+  units.push_back( make_unit( UnitType::Wraith, supplyAvailable / 2 ) );
+  units.push_back( make_unit( UnitType::BattleCruiser, supplyAvailable / 6 ) );
   return units;
 }
 
 vector< Unit > make_zerg( int supplyAvailable )
 {
   vector< Unit > units;
-  units.push_back( make_unit( UnitType::Zergling, supplyAvailable ) );
+  units.push_back( make_unit( UnitType::Zergling, supplyAvailable * 2 ) );
   units.push_back( make_unit( UnitType::Hydralisk, supplyAvailable ) );
-  units.push_back( make_unit( UnitType::Lurker, supplyAvailable ) );
-  units.push_back( make_unit( UnitType::Ultralisk, supplyAvailable ) );
-  units.push_back( make_unit( UnitType::Mutalisk, supplyAvailable ) );
-  units.push_back( make_unit( UnitType::Guardian, supplyAvailable ) );
+  units.push_back( make_unit( UnitType::Lurker, supplyAvailable / 2 ) );
+  units.push_back( make_unit( UnitType::Ultralisk, supplyAvailable / 4 ) );
+  units.push_back( make_unit( UnitType::Mutalisk, supplyAvailable / 2 ) );
+  units.push_back( make_unit( UnitType::Guardian, supplyAvailable / 2 ) );
   return units;
 }
