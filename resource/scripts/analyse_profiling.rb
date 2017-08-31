@@ -23,6 +23,6 @@ file.each do |line|
   end
 end
 
-map.each {|key, value| puts "#{key}: #{value}" }
+map.sort_by{|key, value| value}.reverse.each {|key, value| puts "#{key}: #{value}" }
 
 exit

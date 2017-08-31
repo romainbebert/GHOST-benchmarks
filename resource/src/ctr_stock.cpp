@@ -39,3 +39,4 @@ double Stock::required_cost() const
 
   return std::max( 0., sum - _quantity );
 }
+

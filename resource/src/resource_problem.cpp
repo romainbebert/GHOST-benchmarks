@@ -103,6 +103,7 @@ int main(int argc, char **argv)
     double total = 0.;
     
     for(int i = 0 ; i < runs ; ++i )
+      //if( solver_t.solve( cost_t, solution_t, 20, 5000 ) )
       if( solver_t.solve( cost_t, solution_t, 2, 130 ) )
       {
 	++count;
@@ -144,8 +145,8 @@ int main(int argc, char **argv)
 
     // Define solver
     Solver<Unit, Stock> solver_p( variables_p,
-				  constraints_p,
-				  objective );
+  				  constraints_p,
+  				  objective );
 
     double cost_p = 0.;
     vector<int> solution_p( variables_p.size(), 0 );
@@ -156,8 +157,8 @@ int main(int argc, char **argv)
     for(int i = 0 ; i < runs ; ++i )
       if( solver_p.solve( cost_p, solution_p, 2, 130 ) )
       {
-	++count;
-	total += cost_p;
+  	++count;
+  	total += cost_p;
       }
 
     // process_mem_usage(vm, rss);
@@ -195,8 +196,8 @@ int main(int argc, char **argv)
 
     // Define solver
     Solver<Unit, Stock> solver_z( variables_z,
-				  constraints_z,
-				  objective );
+  				  constraints_z,
+  				  objective );
 
     double cost_z = 0.;
     vector<int> solution_z( variables_z.size(), 0 );
@@ -207,8 +208,8 @@ int main(int argc, char **argv)
     for(int i = 0 ; i < runs ; ++i )
       if( solver_z.solve( cost_z, solution_z, 2, 130 ) )
       {
-	++count;
-	total += cost_z;
+  	++count;
+  	total += cost_z;
       }
 
     // process_mem_usage(vm, rss);
