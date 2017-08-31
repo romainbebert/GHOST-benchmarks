@@ -73,6 +73,8 @@ int main(int argc, char **argv)
   shared_ptr<MaxGroundDPS> objective = make_shared<MaxGroundDPS>();
 
   string race = (string)argv[1];
+  int runs = 100;
+  sscanf( argv[2], "%i", &runs );
   
   ////////////
   // Terran //
@@ -100,7 +102,7 @@ int main(int argc, char **argv)
     int count = 0;
     double total = 0.;
     
-    for(int i = 0 ; i < 100 ; ++i )
+    for(int i = 0 ; i < runs ; ++i )
       if( solver_t.solve( cost_t, solution_t, 2, 130 ) )
       {
 	++count;
@@ -151,7 +153,7 @@ int main(int argc, char **argv)
     int count = 0;
     double total = 0.;
   
-    for(int i = 0 ; i < 100 ; ++i )
+    for(int i = 0 ; i < runs ; ++i )
       if( solver_p.solve( cost_p, solution_p, 2, 130 ) )
       {
 	++count;
@@ -202,7 +204,7 @@ int main(int argc, char **argv)
     int count = 0;
     double total = 0.;
   
-    for(int i = 0 ; i < 100 ; ++i )
+    for(int i = 0 ; i < runs ; ++i )
       if( solver_z.solve( cost_z, solution_z, 2, 130 ) )
       {
 	++count;
