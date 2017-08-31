@@ -101,7 +101,7 @@ int main(int argc, char **argv)
   int count = 0;
   double total = 0.;
   
-  for(int i = 0 ; i < 1 ; ++i )
+  for(int i = 0 ; i < 100 ; ++i )
     if( solver_t.solve( cost_t, solution_t, 20, 130 ) )
     {
       ++count;
@@ -115,12 +115,12 @@ int main(int argc, char **argv)
        << "Mean score: " << total/count << "\n";
   //<< "Memory usage: " << rss << "/" << vm << "\n\n";
   
-  cout << "var-------\n";
-  for( auto& v : variables_t )
-    cout << v.get_name() << ":" << v.get_value() << "\n";
-  cout << "sol-------\n";
-  for( auto& v : variables_t )
-    cout << v.get_name() << ":" << solution_t[ v.get_id() ] << "\n";
+  // cout << "var-------\n";
+  // for( auto& v : variables_t )
+  //   cout << v.get_name() << ":" << v.get_value() << "\n";
+  // cout << "sol-------\n";
+  // for( auto& v : variables_t )
+  //   cout << v.get_name() << ":" << solution_t[ v.get_id() ] << "\n";
   
   cout << "\n\n";
     
@@ -153,7 +153,7 @@ int main(int argc, char **argv)
   count = 0;
   total = 0.;
   
-  for(int i = 0 ; i < 1 ; ++i )
+  for(int i = 0 ; i < 100 ; ++i )
     if( solver_p.solve( cost_p, solution_p, 20, 130 ) )
     {
       ++count;
@@ -167,12 +167,12 @@ int main(int argc, char **argv)
        << "Mean score: " << total/count << "\n";
     //<< "Memory usage: " << rss << "/" << vm << "\n\n";
 
-  cout << "var-------\n";
-  for( auto& v : variables_p )
-    cout << v.get_name() << ":" << v.get_value() << "\n";
-  cout << "sol-------\n";
-  for( auto& v : variables_p )
-      cout << v.get_name() << ":" << solution_p[ v.get_id() ] << "\n";
+  // cout << "var-------\n";
+  // for( auto& v : variables_p )
+  //   cout << v.get_name() << ":" << v.get_value() << "\n";
+  // cout << "sol-------\n";
+  // for( auto& v : variables_p )
+  //     cout << v.get_name() << ":" << solution_p[ v.get_id() ] << "\n";
 
   cout << "\n\n";
 
@@ -205,7 +205,7 @@ int main(int argc, char **argv)
   count = 0;
   total = 0.;
   
-  for(int i = 0 ; i < 1 ; ++i )
+  for(int i = 0 ; i < 100 ; ++i )
     if( solver_z.solve( cost_z, solution_z, 20, 130 ) )
     {
       ++count;
@@ -219,12 +219,12 @@ int main(int argc, char **argv)
        << "Mean score: " << total/count << "\n";
     //<< "Memory usage: " << rss << "/" << vm << "\n\n";
 
-  cout << "var-------\n";
-  for( auto& v : variables_z )
-    cout << v.get_name() << ":" << v.get_value() << "\n";
-  cout << "sol-------\n";
-  for( auto& v : variables_z )
-    cout << v.get_name() << ":" << solution_z[ v.get_id() ] << "\n";
+  // cout << "var-------\n";
+  // for( auto& v : variables_z )
+  //   cout << v.get_name() << ":" << v.get_value() << "\n";
+  // cout << "sol-------\n";
+  // for( auto& v : variables_z )
+  //   cout << v.get_name() << ":" << solution_z[ v.get_id() ] << "\n";
 
   cout << "\n\n";
 }

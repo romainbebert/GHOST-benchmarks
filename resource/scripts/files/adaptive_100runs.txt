@@ -1,12 +1,15 @@
 *** Terran ***
 Success rate: 100%
-Mean score: 6097.53
+Mean score: 6222.73
+
 
 *** Protoss ***
 Success rate: 100%
-Mean score: 4820
+Mean score: 4839.51
+
 
 *** Zerg ***
 Success rate: 100%
-Mean score: 7575.99
+Mean score: 7611.24
+
 
